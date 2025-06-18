@@ -8,8 +8,10 @@ describe('PageNotificationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PageNotificationComponent],
-    }).compileComponents();
+      imports: [PageNotificationComponent]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(PageNotificationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

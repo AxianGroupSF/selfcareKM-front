@@ -9,59 +9,51 @@
   ]"
 >
   @if (icon) {
-    <div class="cntNotification__icn">
-      @if (iconSpec) {
-        <i class="{{ iconSpec }}"></i>
-      } @else {
-        @for (iconItem of listIcon; track $index) {
-          @if (iconItem.status === status) {
-            <i class="{{ iconItem.icon }}"></i>
-          }
-        }
-      }
-    </div>
+  <div class="cntNotification__icn">
+    @if (iconSpec) {
+    <i class="{{ iconSpec }}"></i>
+    } @else { @for (iconItem of listIcon; track $index) { @if (iconItem.status
+    === status) {
+    <i class="{{ iconItem.icon }}"></i>
+    } } }
+  </div>
   }
   <div class="cntNotification__body">
     @if (title) {
-      <div class="cntNotification__title">{{ title }}</div>
+    <div class="cntNotification__title">{{ title }}</div>
     }
     <div class="cntNotification__content">
       @if (message) {
-        {{ message }}
+      {{ message }}
       } @else {
-        <ng-content></ng-content>
+      <ng-content></ng-content>
       }
     </div>
-    @if (buttonLabelLeft || buttonLabelRight) {
-      @if (type !== "toast") {
-        <div class="cntNotification__btn">
-          <div class="listbtn">
-            @if (buttonLabelLeft) {
-              <div class="listbtn__item">
-                <app-default-button
-                  aspect="outline"
-                  (action)="onOpen(!actionOpen)"
-                  >{{ buttonLabelLeft }}</app-default-button
-                >
-              </div>
-            }
-            @if (buttonLabelRight) {
-              <div class="listbtn__item">
-                <app-default-button (action)="onAccept()">{{
-                  buttonLabelRight
-                }}</app-default-button>
-              </div>
-            }
-          </div>
+    @if (buttonLabelLeft || buttonLabelRight) { @if (type !== "toast") {
+    <div class="cntNotification__btn">
+      <div class="listbtn">
+        @if (buttonLabelLeft) {
+        <div class="listbtn__item">
+          <app-default-button aspect="outline" (action)="onOpen(false)">{{
+            buttonLabelLeft
+          }}</app-default-button>
         </div>
-      }
-    }
+        } @if (buttonLabelRight) {
+        <div class="listbtn__item">
+          <app-default-button (action)="onAccept()">{{
+            buttonLabelRight
+          }}</app-default-button>
+        </div>
+        }
+      </div>
+    </div>
+    } }
   </div>
   @if (closeButton && type !== "toast") {
-    <div
-      class="cntNotification__close"
-      (click)="onOpen(!actionOpen)"
-      (keypress)="onOpen(!actionOpen)"
-    ></div>
+  <div
+    class="cntNotification__close"
+    (click)="onOpen(false)"
+    (keypress)="onOpen(false)"
+  ></div>
   }
 </div>

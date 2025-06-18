@@ -30,7 +30,7 @@ export const routes: Routes = [
         path: 'design-sytem',
         loadChildren: () =>
           import('./pages/design-system/design-system.routes').then(
-            (c) => c.routes,
+            (c) => c.routes
           ),
       },
     ],

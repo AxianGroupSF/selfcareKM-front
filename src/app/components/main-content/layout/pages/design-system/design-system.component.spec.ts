@@ -8,8 +8,10 @@ describe('DesignSystemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DesignSystemComponent],
-    }).compileComponents();
+      imports: [DesignSystemComponent]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(DesignSystemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

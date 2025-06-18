@@ -8,8 +8,10 @@ describe('PageBreadcrumbComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PageBreadcrumbComponent],
-    }).compileComponents();
+      imports: [PageBreadcrumbComponent]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(PageBreadcrumbComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

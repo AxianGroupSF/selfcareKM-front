@@ -10,15 +10,15 @@
     <div class="mainModal__header">
       <div class="headerModal">
         @if (typeModal === "right") {
-          <div class="headerModal__item">
-            <div
-              class="ettireModal"
-              (click)="onEttir(!actionEttir)"
-              (keypress)="onEttir(!actionEttir)"
-            >
-              <i class="icn-chevron-double"></i>
-            </div>
+        <div class="headerModal__item">
+          <div
+            class="ettireModal"
+            (click)="onEttir(!actionEttir)"
+            (keypress)="onEttir(!actionEttir)"
+          >
+            <i class="icn-chevron-double"></i>
           </div>
+        </div>
         }
         <div class="headerModal__item">
           <div
@@ -36,25 +36,25 @@
       </div>
     </div>
     @if (buttonLabelLeft || buttonLabelRight) {
-      <div class="mainModal__footer">
-        <div class="listBtns">
-          <div class="listBtns__item">
-            <app-default-button
-              aspect="outline"
-              [fullWidth]="typeModal === 'default'"
-              (action)="onOpen(!openAct)"
-              >{{ buttonLabelLeft }}</app-default-button
-            >
-          </div>
-          <div class="listBtns__item">
-            <app-default-button
-              [fullWidth]="typeModal === 'default'"
-              (action)="onExecute()"
-              >{{ buttonLabelRight }}</app-default-button
-            >
-          </div>
+    <div class="mainModal__footer">
+      <div class="listBtns">
+        <div class="listBtns__item">
+          <app-default-button
+            aspect="outline"
+            [fullWidth]="typeModal === 'default'"
+            (action)="onOpen(!openAct)"
+            >{{ buttonLabelLeft }}</app-default-button
+          >
+        </div>
+        <div class="listBtns__item">
+          <app-default-button
+            [fullWidth]="typeModal === 'default'"
+            (action)="onExecute()"
+            >{{ buttonLabelRight }}</app-default-button
+          >
         </div>
       </div>
+    </div>
     }
   </div>
 </main>

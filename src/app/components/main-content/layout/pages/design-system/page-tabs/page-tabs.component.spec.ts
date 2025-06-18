@@ -11,11 +11,7 @@ describe('PageTabsComponent', () => {
       imports: [PageTabsComponent]
     })
     .compileComponents();
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> release-3.0.0
     fixture = TestBed.createComponent(PageTabsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

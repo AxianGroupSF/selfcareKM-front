@@ -2,10 +2,11 @@ import { Component, input } from '@angular/core';
 import { BadgeColor, BadgeType } from '../../models/Badges';
 
 @Component({
-    selector: 'app-badges',
-    imports: [],
-    templateUrl: './badges.component.html',
-    styleUrl: './badges.component.scss'
+  selector: 'app-badges',
+  standalone: true,
+  imports: [],
+  templateUrl: './badges.component.html',
+  styleUrl: './badges.component.scss',
 })
 export class BadgesComponent {
   aspectBadge = input<BadgeColor>('black');

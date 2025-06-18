@@ -15,7 +15,7 @@ export const httpRequestInterceptor: HttpInterceptorFn = (req, next) => {
     requestHeaders = new HttpHeaders({
       'Access-Control-Allow-Headers': '*',
       'Content-Type': 'application/json',
-      token: authService.getAuth(),
+      Authorization: authService.getAuth(),
     });
   }
   let modifiedReq = req.clone({

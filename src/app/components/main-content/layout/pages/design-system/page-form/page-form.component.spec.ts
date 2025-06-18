@@ -8,8 +8,10 @@ describe('PageFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PageFormComponent],
-    }).compileComponents();
+      imports: [PageFormComponent]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(PageFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

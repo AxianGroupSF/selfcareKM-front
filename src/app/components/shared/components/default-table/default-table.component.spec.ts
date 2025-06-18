@@ -8,8 +8,10 @@ describe('DefaultTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DefaultTableComponent],
-    }).compileComponents();
+      imports: [DefaultTableComponent]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(DefaultTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

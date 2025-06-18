@@ -15,10 +15,11 @@ import { StatusComponent } from './status/status.component';
 import { BtnActionComponent } from './btn-action/btn-action.component';
 
 @Component({
-    selector: 'app-default-table',
-    imports: [CommonModule, StatusComponent, BtnActionComponent],
-    templateUrl: './default-table.component.html',
-    styleUrl: './default-table.component.scss'
+  selector: 'app-default-table',
+  standalone: true,
+  imports: [CommonModule, StatusComponent, BtnActionComponent],
+  templateUrl: './default-table.component.html',
+  styleUrl: './default-table.component.scss',
 })
 export class DefaultTableComponent {
   @Input() listStatus: string[] = [];
@@ -37,7 +38,7 @@ export class DefaultTableComponent {
   heritageRelation(
     data: any,
     relation: string | undefined,
-    dataArray: boolean = false,
+    dataArray: boolean = false
   ) {
     // dataArray need a array data
     if (relation && data) {
@@ -76,14 +77,14 @@ export class DefaultTableComponent {
             this.renderer.setAttribute(
               checkItem.nativeElement,
               'data-order',
-              'DESC',
+              'DESC'
             );
           } else {
             this.renderer.addClass(item, 'cntOrder--asc');
             this.renderer.setAttribute(
               checkItem.nativeElement,
               'data-order',
-              'ASC',
+              'ASC'
             );
           }
         }

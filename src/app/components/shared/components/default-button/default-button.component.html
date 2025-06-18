@@ -12,15 +12,13 @@
 >
   <span class="btnintern">
     @if (iconValue) {
-      <i class="{{ fontIconValue }}"></i>
-    }
-    @if (labelValue) {
-      {{ labelValue }}
+    <i class="{{ fontIconValue }}"></i>
+    } @if (labelValue) {
+    {{ labelValue }}
     } @else {
-      <ng-content></ng-content>
-    }
-    @if (doubleIconValue) {
-      <i class="{{ fontIcon2Value }}"></i>
+    <ng-content></ng-content>
+    } @if (doubleIconValue) {
+    <i class="{{ fontIcon2Value }}"></i>
     }
   </span>
 </button>

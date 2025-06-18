@@ -53,25 +53,26 @@ moment.updateLocale('fr', {
 });
 
 @Component({
-    selector: 'app-allfields',
-    providers: [
-        provideMomentDateAdapter(MY_FORMATS),
-        { provide: MAT_DATE_LOCALE, useValue: 'fr' },
-        provideNativeDateAdapter(),
-    ],
-    imports: [
-        CommonModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatDatepickerModule,
-        FormsModule,
-        ReactiveFormsModule,
-        NgxMatTimepickerModule,
-        NgSelectModule,
-    ],
-    templateUrl: './allfields.component.html',
-    styleUrl: './allfields.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-allfields',
+  standalone: true,
+  providers: [
+    provideMomentDateAdapter(MY_FORMATS),
+    { provide: MAT_DATE_LOCALE, useValue: 'fr' },
+    provideNativeDateAdapter(),
+  ],
+  imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxMatTimepickerModule,
+    NgSelectModule,
+  ],
+  templateUrl: './allfields.component.html',
+  styleUrl: './allfields.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AllfieldsComponent {
   @Input() parentForm!: FormGroup;

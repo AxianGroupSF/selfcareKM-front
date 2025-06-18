@@ -8,34 +8,34 @@ import { environment } from '../../../../environments/environment';
 })
 export class HttpRequestService {
   private readonly host: string = environment.host;
-  private readonly partPath: string = 'api';
+  private readonly partPath: string = '/api';
   private readonly http = inject(HttpClient);
 
   public post<T>(url: string, body: any): Observable<T> {
-    return this.http.post<T>(`${this.host}/${this.partPath}/${url}`, body);
+    return this.http.post<T>(`${this.host}${this.partPath}/${url}`, body);
   }
 
   public get<T>(url: string): Observable<T> {
-    return this.http.get<T>(`${this.host}/${this.partPath}/${url}`);
+    return this.http.get<T>(`${this.host}${this.partPath}/${url}`);
   }
 
   public put<T>(url: string, body: any): Observable<T> {
-    return this.http.put<T>(`${this.host}/${this.partPath}/${url}`, body);
+    return this.http.put<T>(`${this.host}${this.partPath}/${url}`, body);
   }
 
   public delete<T>(url: string): Observable<T> {
-    return this.http.delete<T>(`${this.host}/${this.partPath}/${url}`);
+    return this.http.delete<T>(`${this.host}${this.partPath}/${url}`);
   }
 
   public patch<T>(url: string, body: any): Observable<T> {
-    return this.http.patch<T>(`${this.host}/${this.partPath}/${url}`, body);
+    return this.http.patch<T>(`${this.host}${this.partPath}/${url}`, body);
   }
 
   public head<T>(url: string): Observable<T> {
-    return this.http.head<T>(`${this.host}/${this.partPath}/${url}`);
+    return this.http.head<T>(`${this.host}${this.partPath}/${url}`);
   }
 
   public options<T>(url: string): Observable<T> {
-    return this.http.options<T>(`${this.host}/${this.partPath}/${url}`);
+    return this.http.options<T>(`${this.host}${this.partPath}/${url}`);
   }
 }

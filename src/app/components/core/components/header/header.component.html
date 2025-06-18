@@ -20,29 +20,29 @@
           <div class="cntNavBox">
             <ul class="cntNav">
               @for (nav of listNav; track $index) {
-                <li
-                  routerLinkActive="current"
-                  ariaCurrentWhenActive="page"
-                  [routerLinkActiveOptions]="{ exact: true }"
-                  [class]="{
-                    parentChild: nav.children && nav.children.length > 0
-                  }"
-                >
-                  <a [routerLink]="[nav.link]"> {{ nav.title }} </a>
-                  @if (nav.children && nav.children.length > 0) {
-                    <ul class="submenu">
-                      @for (child of nav.children; track $index) {
-                        <li
-                          routerLinkActive="current"
-                          ariaCurrentWhenActive="page"
-                          [routerLinkActiveOptions]="{ exact: true }"
-                        >
-                          <a [routerLink]="[child.link]"> {{ child.title }} </a>
-                        </li>
-                      }
-                    </ul>
+              <li
+                routerLinkActive="current"
+                ariaCurrentWhenActive="page"
+                [routerLinkActiveOptions]="{ exact: true }"
+                [class]="{
+                  parentChild: nav.children && nav.children.length > 0
+                }"
+              >
+                <a [routerLink]="[nav.link]"> {{ nav.title }} </a>
+                @if (nav.children && nav.children.length > 0) {
+                <ul class="submenu">
+                  @for (child of nav.children; track $index) {
+                  <li
+                    routerLinkActive="current"
+                    ariaCurrentWhenActive="page"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                  >
+                    <a [routerLink]="[child.link]"> {{ child.title }} </a>
+                  </li>
                   }
-                </li>
+                </ul>
+                }
+              </li>
               }
             </ul>
           </div>

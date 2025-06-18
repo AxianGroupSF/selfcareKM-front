@@ -13,43 +13,36 @@
   ></div>
 
   <ul>
-    @for (itemPage of newlistCurrent; track $index) {
-      @if (navMax > $index) {
-        @if (
-          listCurrent.length !== newlistCurrent.length &&
-          $index === 0 &&
-          navMax === newlistCurrent.length - 1
-        ) {
-          <li
-            [ngClass]="{ current: currentPag === listCurrent[$index].page }"
-            (click)="onPage(listCurrent[$index].page)"
-            (keypress)="onPage(listCurrent[$index].page)"
-          >
-            {{ listCurrent[$index].page }}
-          </li>
-          <li class="navDotted"></li>
-        }
-        <li
-          [ngClass]="{ current: currentPag === itemPage.page }"
-          (click)="onPage(itemPage.page)"
-          (keypress)="onPage(itemPage.page)"
-        >
-          {{ itemPage.page }}
-        </li>
-      } @else if ($index === navMax && $count !== navMax + 1) {
-        <li class="navDotted"></li>
-      } @else {
-        @if ($last) {
-          <li
-            [ngClass]="{ current: currentPag === itemPage.page }"
-            (click)="onPage(itemPage.page)"
-            (keypress)="onPage(itemPage.page)"
-          >
-            {{ itemPage.page }}
-          </li>
-        }
-      }
+    @for (itemPage of newlistCurrent; track $index) { @if (navMax > $index) {
+    @if ( listCurrent.length !== newlistCurrent.length && $index === 0 && navMax
+    === newlistCurrent.length - 1 ) {
+    <li
+      [ngClass]="{ current: currentPag === listCurrent[$index].page }"
+      (click)="onPage(listCurrent[$index].page)"
+      (keypress)="onPage(listCurrent[$index].page)"
+    >
+      {{ listCurrent[$index].page }}
+    </li>
+    <li class="navDotted"></li>
     }
+    <li
+      [ngClass]="{ current: currentPag === itemPage.page }"
+      (click)="onPage(itemPage.page)"
+      (keypress)="onPage(itemPage.page)"
+    >
+      {{ itemPage.page }}
+    </li>
+    } @else if ($index === navMax && $count !== navMax + 1) {
+    <li class="navDotted"></li>
+    } @else { @if ($last) {
+    <li
+      [ngClass]="{ current: currentPag === itemPage.page }"
+      (click)="onPage(itemPage.page)"
+      (keypress)="onPage(itemPage.page)"
+    >
+      {{ itemPage.page }}
+    </li>
+    } } }
   </ul>
   <div
     class="mainPaged__arrow mainPaged__arrow--next"

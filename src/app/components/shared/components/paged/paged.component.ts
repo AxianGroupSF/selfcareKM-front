@@ -4,10 +4,11 @@ import { PagedService } from '../../services/paged.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-paged',
-    imports: [CommonModule],
-    templateUrl: './paged.component.html',
-    styleUrl: './paged.component.scss'
+  selector: 'app-paged',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './paged.component.html',
+  styleUrl: './paged.component.scss',
 })
 export class PagedComponent {
   private readonly pagedService = inject(PagedService);
@@ -38,6 +39,7 @@ export class PagedComponent {
   }
   restList(page: number) {
     let listComplite = [...this.listCurrent];
+
     if (page > 2 && listComplite.length > 4) {
       if (page % 2 !== 0) {
         listComplite.splice(0, page - 1);

@@ -1,127 +1,106 @@
 @if (listHeader.length > 0) {
-  <div class="mainTable" [class]="{ 'mainTable--dark': darkMode }">
-    <table>
-      <thead>
-        <tr>
-          @for (header of listHeader; track $index) {
-            @if (header.label) {
-              <th
-                [ngClass]="{ cntOrder: header.order }"
-                [ngStyle]="{
-                  'text-align': header.align,
-                  width: header.width_th
-                }"
-              >
-                @if (header.order && header.sort) {
-                  <span
-                    (click)="onOrder(header.sort, itemOrder)"
-                    (keypress)="onOrder(header.sort, itemOrder)"
-                    data-order="DESC"
-                    #itemOrder
-                    >{{ header.label }}</span
-                  >
-                } @else {
-                  <span>{{ header.label }}</span>
-                }
-              </th>
-            } @else {
-              @if (header.btnFilter) {
-                <th class="cntFilter">
-                  <div
-                    class="btnFilter"
-                    (click)="onFilter()"
-                    (keypress)="onFilter()"
-                  >
-                    <i class="icn-setting"></i>
-                  </div>
-                </th>
-              }
+<div class="mainTable" [class]="{ 'mainTable--dark': darkMode }">
+  <table>
+    <thead>
+      <tr>
+        @for (header of listHeader; track $index) { @if (header.label) {
+        <th
+          [ngClass]="{ cntOrder: header.order }"
+          [ngStyle]="{
+            'text-align': header.align,
+            width: header.width_th
+          }"
+        >
+          @if (header.order && header.sort) {
+          <span
+            (click)="onOrder(header.sort, itemOrder)"
+            (keypress)="onOrder(header.sort, itemOrder)"
+            data-order="DESC"
+            #itemOrder
+            >{{ header.label }}</span
+          >
+          } @else {
+          <span>{{ header.label }}</span>
+          }
+        </th>
+        } @else { @if (header.btnFilter) {
+        <th class="cntFilter">
+          <div class="btnFilter" (click)="onFilter()" (keypress)="onFilter()">
+            <i class="icn-setting"></i>
+          </div>
+        </th>
+        } } }
+      </tr>
+    </thead>
+    <tbody>
+      @if (dataList && dataList.length > 0) { @for (item of dataList; track
+      $index) {
+      <tr [attr.data-item]="'item-' + $index">
+        @for (itemHead of listHeader; track $index) {
+        <td
+          [attr.data-item]="itemHead.label + ' :'"
+          [ngStyle]="{ 'text-align': itemHead.align }"
+        >
+          @switch (itemHead.type_value) { @case ("avatar") {
+          <!-- Avatar -->
+          <div class="cntAvatar">
+            <div class="cntAvatar__img">
+              <picture class="boxAvatar">
+                <img
+                  src="{{ heritageRelation(item, itemHead.relation_img) }}"
+                  alt="Avatar"
+                />
+              </picture>
+            </div>
+            <div class="cntAvatar__info">
+              {{ heritageRelation(item, itemHead.relation) }}
+              <div class="infoSup">
+                {{ heritageRelation(item, itemHead.relation_label) }}
+              </div>
+            </div>
+          </div>
+          } @case ("contentSub") {
+          <!-- with subcontent -->
+          {{ heritageRelation(item, itemHead.relation) }}
+          <div class="infoSup">
+            {{ heritageRelation(item, itemHead.relation_label) }}
+          </div>
+          } @case ("status") {
+          <app-status
+            [listStatusIn]="listStatus"
+            [code]="heritageRelation(item, itemHead.relation)"
+            >{{ heritageRelation(item, itemHead.relation_label) }}</app-status
+          >
+          } @case ("action") {
+          <!-- action btn -->
+          <div class="listAction">
+            @for (action of itemHead.action_data; track $index) {
+            <div class="listAction__item">
+              <app-btn-action
+                [icon]="action.icon"
+                [size]="action.size ?? ''"
+                (onAction)="
+                  onActionBtn(
+                    heritageRelation(item, itemHead.relation),
+                    action.type
+                  )
+                "
+              ></app-btn-action>
+            </div>
             }
-          }
-        </tr>
-      </thead>
-      <tbody>
-        @if (dataList && dataList.length > 0) {
-          @for (item of dataList; track $index) {
-            <tr [attr.data-item]="'item-' + $index">
-              @for (itemHead of listHeader; track $index) {
-                <td
-                  [attr.data-item]="itemHead.label + ' :'"
-                  [ngStyle]="{ 'text-align': itemHead.align }"
-                >
-                  @switch (itemHead.type_value) {
-                    @case ("avatar") {
-                      <!-- Avatar -->
-                      <div class="cntAvatar">
-                        <div class="cntAvatar__img">
-                          <picture class="boxAvatar">
-                            <img
-                              src="{{
-                                heritageRelation(item, itemHead.relation_img)
-                              }}"
-                              alt="Avatar"
-                            />
-                          </picture>
-                        </div>
-                        <div class="cntAvatar__info">
-                          {{ heritageRelation(item, itemHead.relation) }}
-                          <div class="infoSup">
-                            {{
-                              heritageRelation(item, itemHead.relation_label)
-                            }}
-                          </div>
-                        </div>
-                      </div>
-                    }
-                    @case ("contentSub") {
-                      <!-- with subcontent -->
-                      {{ heritageRelation(item, itemHead.relation) }}
-                      <div class="infoSup">
-                        {{ heritageRelation(item, itemHead.relation_label) }}
-                      </div>
-                    }
-                    @case ("status") {
-                      <app-status
-                        [listStatusIn]="listStatus"
-                        [code]="heritageRelation(item, itemHead.relation)"
-                        >{{
-                          heritageRelation(item, itemHead.relation_label)
-                        }}</app-status
-                      >
-                    }
-                    @case ("action") {
-                      <!-- action btn -->
-                      <div class="listAction">
-                        @for (action of itemHead.action_data; track $index) {
-                          <div class="listAction__item">
-                            <app-btn-action
-                              [icon]="action.icon"
-                              [size]="action.size ?? ''"
-                              (onAction)="
-                                onActionBtn(
-                                  heritageRelation(item, itemHead.relation),
-                                  action.type
-                                )
-                              "
-                            ></app-btn-action>
-                          </div>
-                        }
-                      </div>
-                    }
-                    @default {
-                      {{ heritageRelation(item, itemHead.relation) }}
-                    }
-                  }
-                </td>
-              }
-            </tr>
-          }
-        } @else {
-          <tr>
-            <td [colSpan]="listHeader.length" class="noData">{{ notFound }}</td>
-          </tr>
+          </div>
+          } @default {
+          {{ heritageRelation(item, itemHead.relation) }}
+          } }
+        </td>
         }
-      </tbody>
-    </table>
-  </div>
+      </tr>
+      } } @else {
+      <tr>
+        <td [colSpan]="listHeader.length" class="noData">{{ notFound }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
 }

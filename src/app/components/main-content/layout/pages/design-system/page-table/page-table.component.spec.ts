@@ -8,8 +8,10 @@ describe('PageTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PageTableComponent],
-    }).compileComponents();
+      imports: [PageTableComponent]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(PageTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

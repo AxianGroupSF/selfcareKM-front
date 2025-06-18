@@ -1,4 +1,4 @@
-@use "scss/common/variable";
+@use "common/variable";
 
 .boxBadges {
   @mixin apparence($bg, $noBorder: true, $color: variable.$color-neutrals1) {

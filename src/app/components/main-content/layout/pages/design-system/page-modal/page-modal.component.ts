@@ -6,6 +6,7 @@ import { AllfieldsComponent } from '../../../../../shared/components/allfields/a
 
 @Component({
   selector: 'app-page-modal',
+  standalone: true,
   imports: [ModalComponent, AllfieldsComponent, DefaultButtonComponent],
   templateUrl: './page-modal.component.html',
   styleUrl: './page-modal.component.scss',

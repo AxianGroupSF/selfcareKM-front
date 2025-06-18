@@ -11,11 +11,7 @@ describe('DefaultButtonComponent', () => {
       imports: [DefaultButtonComponent]
     })
     .compileComponents();
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> release-3.0.0
     fixture = TestBed.createComponent(DefaultButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
