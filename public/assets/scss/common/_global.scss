@@ -1,0 +1,172 @@
+@use "./" as *;
+
+body {
+  font-family: $fontFamily-default;
+  @include font-size($fontSize1);
+  color: $txt-color-default;
+  line-height: $lineHeight1;
+  letter-spacing: $lettreSpacing1;
+  font-weight: $normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $fontFamily2;
+  font-weight: $bold;
+  line-height: $lineHeight2;
+  letter-spacing: $lettreSpacing2;
+}
+h1,
+.title1 {
+  @include font-size($fontSize-h1);
+  margin-bottom: $marginBottom-h1;
+  text-transform: $textTransform-h1;
+  color: $color-h1;
+}
+h2,
+.title2 {
+  @include font-size($fontSize-h2);
+  margin-bottom: $marginBottom-h2;
+  text-transform: $textTransform-h2;
+  color: $color-h2;
+}
+h3,
+.title3 {
+  @include font-size($fontSize-h3);
+  margin-bottom: $marginBottom-h3;
+  text-transform: $textTransform-h3;
+  color: $color-h3;
+}
+h4,
+.title4 {
+  @include font-size($fontSize-h4);
+  margin-bottom: $marginBottom-h4;
+  text-transform: $textTransform-h4;
+  color: $color-h4;
+}
+h5,
+.title5 {
+  @include font-size($fontSize-h5);
+  margin-bottom: $marginBottom-h5;
+  text-transform: $textTransform-h5;
+  color: $color-h5;
+}
+h6,
+.title6 {
+  @include font-size($fontSize-h6);
+  margin-bottom: $marginBottom-h6;
+  text-transform: $textTransform-h6;
+  color: $color-h6;
+}
+a {
+  color: $linkColor;
+  text-decoration: $linkTextDecoration;
+  transition: $transition-default;
+  &:hover {
+    color: $linkColor-hover;
+    text-decoration: $linkTextDecoration;
+  }
+}
+strong,
+b {
+  font-weight: $bold;
+}
+em,
+i {
+  font-style: italic;
+}
+blockquote {
+  padding: $blockquote-padding;
+  box-shadow: $blockquote-shadow;
+  border-radius: $blockquote-radius;
+  background: $blockquote-bg;
+  position: relative;
+  font-style: $blockquote-fontStyle;
+  &::before,
+  &::after {
+    content: $quote-icn;
+    font-family: $quote-fontFamily;
+    font-size: $quote-size;
+    color: $quote-color;
+    display: block;
+    position: absolute;
+    font-style: normal;
+  }
+  &::before {
+    top: $quote-left-positionTop;
+    left: $quote-left-positionLeft;
+  }
+  &::after {
+    bottom: $quote-right-positionBottom;
+    right: $quote-right-positionRight;
+    transform: $quote-right-rotation;
+  }
+}
+// scrollbar
+body * {
+  scrollbar-color: $srollbar-thumb transparent;
+  scrollbar-width: thin;
+}
+body *:hover {
+  scrollbar-color: $srollbar-thumb transparent;
+}
+body *::-webkit-scrollbar {
+  width: $scrollbar-width;
+  height: $scrollbar-height;
+}
+body *::-webkit-scrollbar-track {
+  box-shadow: $scrollbar-boxShadow;
+  background: $scrollbar-track;
+  border-radius: $scrollbar-borderRadius;
+}
+body *::-webkit-scrollbar-thumb {
+  background: $srollbar-thumb;
+  border-radius: $scrollbar-borderRadius;
+}
+body *:hover::-webkit-scrollbar-thumb {
+  background: $srollbar-thumb;
+  border-radius: $scrollbar-borderRadius;
+}
+p {
+  margin-bottom: $margin-p;
+}
+.container {
+  max-width: $container;
+  @include centerMargin();
+  @include padding($containerPadding);
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+ul,
+ol {
+  padding-left: $list-paddingLeft;
+  margin-bottom: $list-marginBottom;
+  li {
+    &::marker {
+      color: $list-markerColor;
+      font-size: $list-markerSize;
+      line-height: 1;
+    }
+  }
+}
+ul {
+  list-style-type: $list-style;
+}
+ol {
+  list-style-type: $list-style-ord;
+}
+.mainWrapper {
+  min-height: calc(100vh - 513px);
+  @include padding(0 0 6rem);
+  @include max(992px) {
+    padding-top: 0;
+  }
+}
+*:focus-visible {
+  outline: none;
+}

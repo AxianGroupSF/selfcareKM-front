@@ -1,0 +1,53 @@
+<header class="sectHeader sectHeader--sticky">
+  <div class="container">
+    <div class="headerIntern">
+      <div class="cntlogo">
+        <a routerLink="/">
+          <img class="img-fluid" src="assets/images/logo.svg" alt="Logo" />
+        </a>
+      </div>
+      <div class="boxNavIntern">
+        <div class="btnBox">
+          <div id="btnnav">
+            <div class="btninter">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <nav id="navigation">
+          <div class="cntNavBox">
+            <ul class="cntNav">
+              @for (nav of listNav; track $index) {
+                <li
+                  routerLinkActive="current"
+                  ariaCurrentWhenActive="page"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  [class]="{
+                    parentChild: nav.children && nav.children.length > 0
+                  }"
+                >
+                  <a [routerLink]="[nav.link]"> {{ nav.title }} </a>
+                  @if (nav.children && nav.children.length > 0) {
+                    <ul class="submenu">
+                      @for (child of nav.children; track $index) {
+                        <li
+                          routerLinkActive="current"
+                          ariaCurrentWhenActive="page"
+                          [routerLinkActiveOptions]="{ exact: true }"
+                        >
+                          <a [routerLink]="[child.link]"> {{ child.title }} </a>
+                        </li>
+                      }
+                    </ul>
+                  }
+                </li>
+              }
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

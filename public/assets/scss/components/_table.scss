@@ -1,0 +1,162 @@
+@use "../common/" as *;
+
+.mainTable {
+  line-height: 1.2;
+  // table
+  table {
+    width: 100%;
+    border: $table-border;
+    background: $table-bg;
+    font-size: 16px;
+    th,
+    td {
+      padding: $table-paddingCell;
+      border-bottom: $table-borderCell;
+    }
+    thead {
+      font-size: $table-sizeTh;
+      tr {
+        th {
+          background: $color-primary5;
+          text-align: $table-positionTh;
+          font-weight: $table-fontWeightTh;
+          color: #a1a1a1;
+          font-size: 14px;
+          vertical-align: middle;
+        }
+      }
+    }
+    tbody {
+      font-size: 16px;
+      tr {
+        td {
+          background: $color-neutrals1;
+          text-align: $table-positionTd;
+          vertical-align: middle;
+          &.noData {
+            text-align: center;
+          }
+        }
+        &:nth-child(even) {
+          td {
+            background: rgba(22, 114, 236, 0.03);
+          }
+        }
+      }
+    }
+  }
+  tr {
+    &:hover {
+      td {
+        background: rgba(22, 114, 236, 0.06) !important;
+      }
+    }
+  }
+  .infoSup {
+    font-size: 12px;
+    color: #a1a1a1;
+    margin-top: 3px;
+  }
+  .cntOrder {
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      &::after {
+        content: "\e912";
+        font-family: "socle", sans-serif;
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    &--asc {
+      &::after {
+        rotate: 180deg;
+      }
+    }
+  }
+  .cntFilter {
+    width: 26px;
+  }
+  .btnFilter {
+    display: inline-flex;
+    width: 26px;
+    height: 26px;
+    padding: 5px;
+    border: 1px solid #616161;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 26px;
+    color: #616161;
+    cursor: pointer;
+  }
+  &--dark {
+    background: #272727;
+    color: #f8f8f8;
+    table {
+      thead {
+        tr {
+          th {
+            background: #272727;
+            color: #e4e4e4;
+          }
+        }
+      }
+      tbody {
+        tr {
+          &:nth-child(even) td {
+            background: #2a2c2e;
+          }
+          td {
+            background: #272727;
+          }
+        }
+      }
+    }
+    tr {
+      &:hover {
+        td {
+          background: #292a2c !important;
+        }
+      }
+    }
+    .btnFilter {
+      border-color: #f8f8f8;
+      color: #f8f8f8;
+    }
+    .mainTable .infoSup {
+      color: #e4e4e4;
+    }
+  }
+}
+
+.cntAvatar {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  gap: 12px;
+  .boxAvatar {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.boxAvatar {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.btnAction {
+  display: inline-block;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}

@@ -1,0 +1,38 @@
+.sectDesign {
+  margin-bottom: 30px;
+  h2 {
+    font-weight: 400;
+  }
+}
+.listTypeBtn {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.listBtn {
+  &__item {
+    margin-bottom: 20px;
+  }
+}
+.listCol {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  &--col3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__item {
+    margin-bottom: 20px;
+  }
+}
+.cntFormat {
+  margin-bottom: 10px;
+  span {
+    font-weight: 700;
+    display: inline-block;
+    margin-right: 4px;
+  }
+}
+.listBtnOpen {
+  display: flex;
+  gap: 12px;
+}

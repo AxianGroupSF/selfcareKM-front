@@ -1,0 +1,46 @@
+@if (listNavigation()) {
+  <nav
+    class="navbreadcrumb"
+    [class]="[
+      aspect() ? 'navbreadcrumb--' + aspect() : '',
+      bgColor() ? 'navbreadcrumb--bg' : ''
+    ]"
+  >
+    <ul>
+      @for (nav of listNavigation(); track $index) {
+        @if ($first) {
+          <li>
+            @if (nav.icon) {
+              <i class="{{ nav.icon }}"></i>
+            }
+            <a [routerLink]="[nav.path]"> {{ nav.label }}</a>
+          </li>
+          @if ($count > navMax()) {
+            <li>
+              <span class="navDotted"></span>
+            </li>
+          }
+        }
+        @if (!($count - (navMax() - 1) > $index && $count > navMax())) {
+          @if ($last) {
+            <li class="current">
+              @if (nav.icon) {
+                <i class="{{ nav.icon }}"></i>
+              }
+              <span> {{ nav.label }}</span>
+            </li>
+          } @else {
+            @if (!$first) {
+              <li>
+                @if (nav.icon) {
+                  <i class="{{ nav.icon }}"></i>
+                }
+                <a [routerLink]="[nav.path]"> {{ nav.label }}</a>
+              </li>
+            }
+          }
+        }
+      }
+    </ul>
+  </nav>
+}

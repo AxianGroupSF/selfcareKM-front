@@ -1,0 +1,183 @@
+@use "scss/common";
+@use "scss/lib";
+
+// btn
+:focus,
+button:focus {
+  outline: none;
+}
+.btn.focus,
+.btn:focus,
+.form-control:focus {
+  outline: 0;
+  box-shadow: none;
+}
+.btn,
+a.btn {
+  position: relative;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: common.$btn-borderRadius;
+  background: none;
+  padding: 0;
+  .btnintern {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include lib.font-size(common.$btn-fontSize);
+    gap: common.$btn-gap;
+    font-weight: common.$btn-fontWeight;
+    line-height: common.$btn-lineHeight;
+    letter-spacing: common.$btn-letterSpacing;
+    background: common.$btn-bg;
+    @include lib.padding(common.$btn-padding);
+    border-radius: common.$btn-borderRadius;
+    color: common.$btn-color !important;
+    text-transform: common.$btn-textTransform;
+    text-decoration: none !important;
+    border: common.$btn-border;
+    transition: common.$transition-default;
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    opacity: common.$btn-opacity;
+    text-transform: common.$btn-textTransform;
+  }
+  &:hover {
+    .btnintern {
+      background: common.$btn-bg-hover;
+      border-color: common.$btn-bg-hover;
+      color: common.$btn-color-hover !important;
+    }
+    &::before {
+      opacity: common.$btn-opacity-hover;
+    }
+  }
+  &--outline {
+    .btnintern {
+      color: common.$btnLite-color !important;
+      border-color: common.$btnLite-borderColor;
+      background: common.$btnLite-bg !important;
+    }
+    &:hover {
+      .btnintern {
+        color: common.$btnLite-hover !important;
+        background: common.$btnLite-bg-hover !important;
+        border-color: common.$btnLite-borderColor-hover;
+      }
+    }
+  }
+  &--outline2 {
+    .btnintern {
+      color: common.$btnLite2-color !important;
+      background: common.$btnLite2-bg !important;
+      border-color: common.$btnLite2-borderColor;
+    }
+    &:hover {
+      .btnintern {
+        color: common.$btnLite2-hover !important;
+        background: common.$btnLite2-bg-hover !important;
+        border-color: common.$btnLite2-borderColor-hover;
+      }
+    }
+  }
+  &--secondary {
+    .btnintern {
+      background: common.$btn2-bg;
+      color: common.$btn2-color !important;
+      border-color: common.$btn2-borderColor;
+    }
+    &:hover {
+      .btnintern {
+        background: common.$btn2-bg-hover;
+        color: common.$btn2-color-hover !important;
+        border-color: common.$btn2-borderColor-hover;
+      }
+    }
+  }
+  &--unborder {
+    .btnintern {
+      color: common.$btnUnborder-color !important;
+      background: common.$btnUnborder-bg !important;
+      border-color: common.$btnUnborder-border !important;
+    }
+    &:hover {
+      .btnintern {
+        color: common.$btnUnborder-hover !important;
+        background: common.$btnUnborder-bg-hover !important;
+        border-color: common.$btnUnborder-border-hover !important;
+      }
+    }
+  }
+  &--disable {
+    cursor: not-allowed;
+    &,
+    &:hover {
+      &::before {
+        opacity: common.$btn-disable-opacity-hover;
+      }
+    }
+    &.btn--outline {
+      .btnintern {
+        background-color: common.$btnLite-disable-bg !important;
+      }
+    }
+    &.btn--outline2 {
+      .btnintern {
+        background-color: common.$btnLite2-disable-bg !important;
+        border-color: common.$btnLite2-disable-borderColor;
+        color: common.$btnLite2-disable-color !important;
+      }
+    }
+    &.btn--unborder {
+      .btnintern {
+        color: common.$btnUnborder-disable-color !important;
+        background-color: common.$btnUnborder-disable-bg !important;
+        border-color: common.$btnUnborder-disable-bg !important;
+      }
+      &::before {
+        content: none;
+      }
+    }
+    &.btn--secondary {
+      .btnintern {
+        border-color: common.$btn2-disable-borderColor !important;
+        background: common.$btn2-disable-bg !important;
+      }
+    }
+  }
+  &--fullWidth {
+    width: 100%;
+    max-width: 100%;
+  }
+  i {
+    display: inline-block;
+    @include lib.font-size(common.$btn-icn-size);
+  }
+  &--md {
+    @include lib.font-size(common.$btn-md);
+    .btnintern {
+      @include lib.padding(common.$btn-padding);
+    }
+  }
+  &--sm {
+    @include lib.font-size(common.$btn-sm);
+    .btnintern {
+      @include lib.padding(common.$btn-sm-padding);
+    }
+    i {
+      @include lib.font-size(common.$btn-icn-size-sm);
+    }
+  }
+  &--icnright {
+    flex-direction: row-reverse;
+  }
+}

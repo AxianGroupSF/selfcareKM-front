@@ -1,0 +1,60 @@
+<main
+  class="wrapperModal"
+  [ngClass]="[
+    openAct ? 'wrapperModal--open' : '',
+    typeModal ? 'wrapperModal--' + typeModal : '',
+    actionEttir ? 'wrapperModal--restaure' : ''
+  ]"
+>
+  <div class="mainModal" [ngStyle]="{ 'max-width.px': widthModal }">
+    <div class="mainModal__header">
+      <div class="headerModal">
+        @if (typeModal === "right") {
+          <div class="headerModal__item">
+            <div
+              class="ettireModal"
+              (click)="onEttir(!actionEttir)"
+              (keypress)="onEttir(!actionEttir)"
+            >
+              <i class="icn-chevron-double"></i>
+            </div>
+          </div>
+        }
+        <div class="headerModal__item">
+          <div
+            class="mainModal__close"
+            (click)="onOpen(!openAct)"
+            (keypress)="onOpen(!openAct)"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div class="mainModalContent">
+      <div class="mainModal__title">{{ title }}</div>
+      <div class="mainModal__body">
+        <ng-content></ng-content>
+      </div>
+    </div>
+    @if (buttonLabelLeft || buttonLabelRight) {
+      <div class="mainModal__footer">
+        <div class="listBtns">
+          <div class="listBtns__item">
+            <app-default-button
+              aspect="outline"
+              [fullWidth]="typeModal === 'default'"
+              (action)="onOpen(!openAct)"
+              >{{ buttonLabelLeft }}</app-default-button
+            >
+          </div>
+          <div class="listBtns__item">
+            <app-default-button
+              [fullWidth]="typeModal === 'default'"
+              (action)="onExecute()"
+              >{{ buttonLabelRight }}</app-default-button
+            >
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</main>

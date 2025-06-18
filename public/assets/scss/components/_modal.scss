@@ -1,0 +1,76 @@
+.mainModal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 15px 20px;
+  position: relative;
+  min-width: 430px;
+  &__close {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    margin-left: auto;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 18px;
+      background: #616161;
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
+    &::before {
+      rotate: 45deg;
+    }
+    &::after {
+      rotate: -45deg;
+    }
+  }
+  &__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &__preContent {
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-size: 16px;
+  }
+  &__content {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  &__info {
+    color: #1672ec;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  &__note {
+    color: #a1a1a180;
+    margin-bottom: 20px;
+  }
+  &--center {
+    text-align: center;
+  }
+  .listBtns {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .listChoose {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .listChoose,
+  .cntinput {
+    margin-bottom: 20px;
+  }
+}

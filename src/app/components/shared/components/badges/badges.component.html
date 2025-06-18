@@ -1,0 +1,13 @@
+<div
+  class="boxBadges"
+  [class]="[
+    typeBadge() ? 'boxBadges--' + typeBadge() : '',
+    aspectBadge() ? 'boxBadges--' + aspectBadge() : ''
+  ]"
+>
+  @if (numberContent()) { @if (numberContent() > 99) { +99 } @else {
+  {{ numberChar(numberContent()) }}
+  } } @else {
+  <ng-content></ng-content>
+  }
+</div>

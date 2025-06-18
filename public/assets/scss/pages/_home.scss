@@ -1,0 +1,312 @@
+@use "../common/" as *;
+
+.mainWrapper {
+  background-color: #c3c3c3;
+  section {
+    @include padding(3rem 0rem);
+    .testScroll-bar {
+      height: 200px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+  .listrs {
+    font-size: 3rem;
+    color: $color-primary1;
+    text-align: center;
+  }
+}
+.mainColumn2 {
+  @include gridColumn(2);
+  @include max(992px) {
+    @include gridColumn(1);
+  }
+}
+.mainColumn3 {
+  @include gridColumn(3);
+  @include max(992px) {
+    @include gridColumn(2);
+  }
+  @include max(635px) {
+    @include gridColumn(1);
+  }
+}
+.mainColumn4 {
+  @include gridColumn(4);
+  @include max(992px) {
+    @include gridColumn(2);
+  }
+}
+.mainColumn5 {
+  @include gridColumn(5);
+  @include max(992px) {
+    @include gridColumn(2);
+  }
+}
+.listBanniere {
+  .itemBanniere {
+    figure {
+      height: 500px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+.listColor {
+  @include gridColumn(6, 30px);
+  @include max(992px) {
+    @include gridColumn(4, 30px);
+  }
+  @include max(635px) {
+    @include gridColumn(3, 30px);
+  }
+  .itemColor {
+    .cntColor {
+      height: 120px;
+      box-shadow: 0 1px 7px #00000029;
+
+      // background-image: linear-gradient(
+      //   45deg,
+      //   #ffffff 25%,
+      //   #4a4848 25%,
+      //   #4a4848 50%,
+      //   #ffffff 50%,
+      //   #ffffff 75%,
+      //   #4a4848 75%,
+      //   #4a4848 100%
+      // );
+      // background-size: 28.28px 28.28px;
+      .colorIntern {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .primary1 {
+      .colorIntern {
+        background-color: $color-primary1;
+      }
+    }
+    .primary2 {
+      .colorIntern {
+        background-color: $color-primary2;
+      }
+    }
+    .primary3 {
+      .colorIntern {
+        background-color: $color-primary3;
+      }
+    }
+    .primary4 {
+      .colorIntern {
+        background-color: $color-primary4;
+      }
+    }
+    .primary5 {
+      .colorIntern {
+        background-color: $color-primary5;
+      }
+    }
+    .secondary1 {
+      .colorIntern {
+        background-color: $color-semantic1;
+      }
+    }
+    .secondary2 {
+      .colorIntern {
+        background-color: $color-semantic2;
+      }
+    }
+    .secondary3 {
+      .colorIntern {
+        background-color: $color-semantic3;
+      }
+    }
+    .secondary4 {
+      .colorIntern {
+        background-color: $color-semantic4;
+      }
+    }
+    .secondaryLight1 {
+      .colorIntern {
+        background-color: $color-semanticLight1;
+      }
+    }
+    .secondaryLight2 {
+      .colorIntern {
+        background-color: $color-semanticLight2;
+      }
+    }
+    .secondaryLight3 {
+      .colorIntern {
+        background-color: $color-semanticLight3;
+      }
+    }
+    .secondaryLight4 {
+      .colorIntern {
+        background-color: $color-semanticLight4;
+      }
+    }
+    .others1 {
+      .colorIntern {
+        background-color: $color-others1;
+      }
+    }
+    .others2 {
+      .colorIntern {
+        background-color: $color-others2;
+      }
+    }
+    .others3 {
+      .colorIntern {
+        background-color: $color-others3;
+      }
+    }
+    .neutrals1 {
+      .colorIntern {
+        background-color: $color-neutrals1;
+      }
+    }
+    .neutrals2 {
+      .colorIntern {
+        background-color: $color-neutrals2;
+      }
+    }
+    .neutrals3 {
+      .colorIntern {
+        background-color: $color-neutrals3;
+      }
+    }
+    .neutrals4 {
+      .colorIntern {
+        background-color: $color-neutrals4;
+      }
+    }
+    .neutrals5 {
+      .colorIntern {
+        background-color: $color-neutrals5;
+      }
+    }
+    .neutrals6 {
+      .colorIntern {
+        background-color: $color-neutrals6;
+      }
+    }
+    .neutralsLight1 {
+      .colorIntern {
+        background-color: $color-neutralsLight1;
+      }
+    }
+    .neutralsLight2 {
+      .colorIntern {
+        background-color: $color-neutralsLight2;
+      }
+    }
+    .neutralsLight3 {
+      .colorIntern {
+        background-color: $color-neutralsLight3;
+      }
+    }
+    .neutralsLight4 {
+      .colorIntern {
+        background-color: $color-neutralsLight4;
+      }
+    }
+    .neutralsLight5 {
+      .colorIntern {
+        background-color: $color-neutralsLight5;
+      }
+    }
+    .neutralsLight6 {
+      .colorIntern {
+        background-color: $color-neutralsLight6;
+      }
+    }
+    .txtcolor1 {
+      .colorIntern {
+        background-color: $txt-color-default;
+      }
+    }
+    .boxShadow-xs {
+      .colorIntern {
+        box-shadow: $boxShadow-xs;
+      }
+    }
+    .boxShadow-sm {
+      .colorIntern {
+        box-shadow: $boxShadow-sm;
+      }
+    }
+    .boxShadow-md {
+      .colorIntern {
+        box-shadow: $boxShadow-md;
+      }
+    }
+    .boxShadow-lg {
+      .colorIntern {
+        box-shadow: $boxShadow-lg;
+      }
+    }
+    .boxShadow-xl {
+      .colorIntern {
+        box-shadow: $boxShadow-xl;
+      }
+    }
+    .boxShadow-2xl {
+      .colorIntern {
+        box-shadow: $boxShadow-2xl;
+      }
+    }
+    .boxShadow-3xl {
+      .colorIntern {
+        box-shadow: $boxShadow-3xl;
+      }
+    }
+    .colortxt {
+      font-size: 20px;
+      font-weight: 700;
+      padding: 10px;
+    }
+  }
+  &.cntBoxshadow {
+    .cntColor {
+      box-shadow: none;
+    }
+    .colorIntern {
+      background-color: #fff;
+      border-radius: 8px;
+    }
+    .colortxt {
+      text-transform: uppercase;
+    }
+  }
+}
+.setBanniere {
+  padding-top: 0 !important;
+}
+.titleSection {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #242424;
+  font-weight: 700;
+}
+.titleSection2 {
+  color: #242424;
+}
+.fontfamily1 {
+  font-family: $fontFamily-default;
+}
+.fontfamily2 {
+  font-family: $fontFamily2;
+  margin-bottom: 30px;
+}
+.fontfamily1,
+.fontfamily2 {
+  font-size: 38px;
+  padding: 2rem 0;
+  border-bottom: 1px solid #242424;
+  h3 {
+    font-size: 25px;
+  }
+}

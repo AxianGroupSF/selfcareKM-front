@@ -1,0 +1,129 @@
+@use "scss/common";
+
+$gapNav: common.$breadcrumb-nav-gap;
+$widthArrow: common.$breadcrumb-arrow-width;
+.navbreadcrumb {
+  display: inline-block;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: $gapNav;
+    a,
+    span {
+      display: inline-block;
+      color: common.$breadcrumb-nav-color;
+      text-decoration: none;
+      font-size: common.$breadcrumb-nav-size;
+      font-weight: common.$breadcrumb-nav-weight;
+      line-height: common.$breadcrumb-nav-lineHeight;
+      border-bottom: 1px solid transparent;
+      transition: common.$transition-default;
+      &:hover {
+        color: common.$breadcrumb-nav-color-hover;
+        border-color: common.$breadcrumb-nav-borderColor-hover;
+      }
+    }
+    li {
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+        border: 1px solid common.$breadcrumb-arrow-color;
+        border-left: none;
+        border-bottom: none;
+        height: $widthArrow;
+        width: $widthArrow;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 7px;
+        left: calc(((($gapNav / 2) + ($widthArrow / 2)) * -1) - 2px);
+      }
+      &:first-child {
+        &::before {
+          content: none;
+        }
+      }
+      &.current {
+        span {
+          color: common.$breadcrumb-nav-color-hover;
+          border-bottom: 1px solid common.$breadcrumb-nav-color-hover;
+        }
+      }
+      &.current,
+      &:hover {
+        i {
+          color: common.$breadcrumb-nav-color-hover;
+        }
+      }
+      .navDotted {
+        display: inline-block;
+        border-bottom: 5px dotted common.$breadcrumb-nav-color;
+        width: 20px;
+      }
+    }
+  }
+  &--arrow2,
+  &--arrow3 {
+    ul {
+      li {
+        &::before {
+          border: none;
+          transform: none;
+          top: 0;
+          color: common.$breadcrumb-arrow-color;
+        }
+      }
+    }
+  }
+  &--arrow2 {
+    ul {
+      li {
+        &::before {
+          content: "/";
+          left: calc(((($gapNav / 2) + ($widthArrow / 2)) * -1));
+        }
+      }
+    }
+  }
+  &--arrow3 {
+    ul {
+      li {
+        &::before {
+          content: "\e907";
+          font-family: "socle", sans-serif;
+          left: calc(((($gapNav / 2) + ($widthArrow / 2)) * -1) - 6px);
+        }
+      }
+    }
+  }
+  &--arrow4 {
+    ul {
+      li {
+        &::before {
+          width: 0;
+          height: 0;
+          border-width: 4px 5px;
+          border-style: solid;
+          border-color: transparent transparent transparent
+            common.$breadcrumb-arrow-color;
+          transform: none;
+          left: calc(((($gapNav / 2) + ($widthArrow / 2)) * -1) + 2px);
+        }
+      }
+    }
+  }
+  &--bg {
+    padding: 0.8rem 1.6rem;
+    background-color: #fff;
+    border-radius: 0.6rem;
+  }
+  i {
+    display: inline-block;
+    font-size: 15px;
+    margin-right: 5px;
+    color: common.$breadcrumb-nav-color;
+  }
+}

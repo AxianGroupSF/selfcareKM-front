@@ -1,0 +1,18 @@
+.setBanniere {
+  .itemIntern {
+    position: relative;
+  }
+  .banniereTxt {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+  .cnttxtIntern {
+    width: 510px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+  }
+}

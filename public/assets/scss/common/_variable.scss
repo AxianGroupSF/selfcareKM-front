@@ -1,0 +1,364 @@
+// PATH ----------------------------------------------------------------------
+$pathFont: "/assets/fonts/font-family"; // path font-family
+$pathFontIcon: "/assets/fonts/font-icon"; // path font-family
+$pathImg: "/assets/images"; // path image
+
+// COLOR --------------------------------------------------------------------
+// Primary color (CHART)
+$color-primary1: #ffd100;
+$color-primary2: #00377d;
+$color-primary3: #5f99d2;
+$color-primary4: #272727;
+$color-primary5: #f8f8f8;
+// Secondary color
+$color-semantic1: #1672ec;
+$color-semantic2: #2ab930;
+$color-semantic3: #ed9526;
+$color-semantic4: #da100b;
+// Secondary light color
+$color-semanticLight1: #c4dcfa;
+$color-semanticLight2: #c9edcb;
+$color-semanticLight3: #fae4c8;
+$color-semanticLight4: #f5c3c2;
+// Others color
+$color-others1: #e53520;
+$color-others2: #9747ff;
+$color-others3: #fcd0cf80;
+// Neutrals 100% color
+$color-neutrals1: #ffffff;
+$color-neutrals2: #f8f8f8;
+$color-neutrals3: #e4e4e4;
+$color-neutrals4: #a1a1a1;
+$color-neutrals5: #616161;
+$color-neutrals6: #3e3e3e;
+// Neutrals 50% color
+$color-neutralsLight1: #f8f8f880;
+$color-neutralsLight2: #e4e4e480;
+$color-neutralsLight3: #a1a1a180;
+$color-neutralsLight4: #61616180;
+$color-neutralsLight5: #3e3e3e80;
+$color-neutralsLight6: #27272780;
+
+// SHADOW -------------------------------------------------------------------
+/* offset-x | offset-y | blur-radius | spread-radius | color */
+$boxShadow-xs: 0 1px 2px 0 #1018280d;
+$boxShadow-sm: 0 1px 2px 0 #1018280f, 0 1px 3px 0 #1018281a;
+$boxShadow-md: 0 2px 4px -2px #1018280f, 0 4px 8px -2px #1018281a;
+$boxShadow-lg: 0 4px 6px -2px #10182808, 0 12px 16px -4px #10182814;
+$boxShadow-xl: 0 8px 8px -4px #10182808, 0 20px 24px -4px #10182814;
+$boxShadow-2xl: 0 24px 48px -12px #1018282e;
+$boxShadow-3xl: 0 32px 64px -12px #10182824;
+
+// LAYOUT --------------------------------------------------------------------
+$container: 1200px; // width container
+$containerPadding: 0 1.5rem; // padding container
+$margin-p: 20px; // <p> : margin-buttom
+$borderRadius: 8px; // border-radius General
+$borderRadius2: $borderRadius; // border-radius seconder (optionel)
+$transition-default: all 0.3s ease-in-out; // transition General
+$boxShadow: $boxShadow-sm; // box-shadow General
+
+// DEFAULT -------------------------------------------------------------------
+$fontFamily-default: "Roboto"; // font-family primary
+$fontFamily2: "Montserrat"; // font-family secondary
+$fontIcon: "socle";
+$main-bg: $color-neutrals1; // background global des pages
+$txt-color-default: $color-primary4; // color default
+
+$fontSize1: 1.4rem; // font-size global
+$fontSize2: 1.6rem; // font-size global seconde
+
+$lineHeight1: 1.6; // line-height global
+$lineHeight2: 1.2; // line-height global seconde
+
+$lettreSpacing1: 0.9px; // lettre-spacing global
+$lettreSpacing2: 0; // lettre-spacing global seconde
+
+$thin: 100; // Thin (Hairline)
+$extraLight: 200; // Extra Light (Ultra Light)
+$light: 300; // Light
+$normal: 400; // Normal
+$medium: 500; // Medium
+$semiBold: 600; // Semi Bold (Demi Bold)
+$bold: 700; // Bold
+$extraBold: 800; // Extra Bold (Ultra Bold)
+$heavy: 900; // Black (Heavy)
+
+// HEADING : Title tag ------------------------------------------------------
+// H1
+$fontSize-h1: 4rem;
+$marginBottom-h1: 20px;
+$textTransform-h1: uppercase;
+$fontWeight-h1: $bold;
+$color-h1: $color-primary2;
+
+// H2
+$fontSize-h2: 3rem;
+$marginBottom-h2: 20px;
+$textTransform-h2: uppercase;
+$color-h2: $color-primary2;
+
+// H3
+$fontSize-h3: 2.5rem;
+$marginBottom-h3: 20px;
+$textTransform-h3: uppercase;
+$color-h3: $color-primary2;
+
+// H4
+$fontSize-h4: 2rem;
+$marginBottom-h4: 20px;
+$textTransform-h4: uppercase;
+$color-h4: $color-primary2;
+
+// H5
+$fontSize-h5: 1.8rem;
+$marginBottom-h5: 20px;
+$textTransform-h5: uppercase;
+$color-h5: $color-primary2;
+
+// H6
+$fontSize-h6: 1.6rem;
+$marginBottom-h6: 20px;
+$textTransform-h6: uppercase;
+$color-h6: $color-primary2;
+
+// LINK : (Link tag <a>) ------------------------------------------------
+$linkColor: $color-primary1; // color par defaut
+$linkColor-hover: $color-primary2; // color au survol
+$linkTextDecoration: none; // text-decoration
+
+// BLOCKQUOTE --------------------------------------------------------------
+$blockquote-padding: 20px 50px;
+$blockquote-shadow: 0 1px 7px #00000029;
+$blockquote-radius: 15px;
+$blockquote-bg: $color-neutrals1; // background
+$blockquote-fontStyle: italic;
+
+// blockquote icon
+$quote-icn: "\e904"; // id Icomoon
+$quote-fontFamily: $fontIcon;
+$quote-size: 25px;
+$quote-color: $color-primary2;
+$quote-left-positionTop: 10px;
+$quote-left-positionLeft: 15px;
+$quote-right-positionBottom: 10px;
+$quote-right-positionRight: 15px;
+// blockquote icon effet miroire quote right
+$quote-right-rotation: scaleX(-1);
+
+// SCROLL BAR ----------------------------------------------------------------
+$srollbar-thumb: $color-primary1; // bar color
+$scrollbar-track: #f9f9f9; // scroll color
+$scrollbar-borderRadius: 5px; // border-radius scroll bar
+$scrollbar-boxShadow: inset 0 0 5px #ccc; // shadow intern
+$scrollbar-width: 3px; // width scrollbar
+$scrollbar-height: 6px;
+
+// BUTTON -------------------------------------------------------------------
+// btn default
+$btn-fontSize: 1.6rem;
+$btn-fontWeight: $semiBold;
+$btn-lineHeight: 1.2;
+$btn-letterSpacing: 0.8px;
+$btn-color: $color-primary4;
+$btn-textTransform: none;
+$btn-bg: $color-primary1;
+$btn-padding: 0.9rem 1rem;
+$btn-borderRadius: $borderRadius;
+$btn-border: 1px solid $color-primary1;
+$btn-gap: 0.5rem;
+$btn-opacity: 0;
+// btn hover
+$btn-bg-hover: $btn-bg;
+$btn-color-hover: $btn-color;
+$btn-opacity-hover: 0.1;
+// btn disable
+$btn-disable-bg: $color-neutrals3;
+$btn-disable-color: $color-neutrals2;
+$btn-disable-opacity-hover: 0.65;
+
+// btn-custom (btn secondary)
+$btn2-color: $color-neutrals1;
+$btn2-bg: $color-primary2;
+$btn2-borderColor: $btn2-bg;
+// btn-custom (btn secondary) hover
+$btn2-color-hover: $btn2-color;
+$btn2-bg-hover: $color-primary3;
+$btn2-borderColor-hover: $color-primary3;
+// btn2 disable
+$btn2-disable-bg: $btn2-bg;
+$btn2-disable-borderColor: $btn2-borderColor;
+
+// btn-lite
+$btnLite-color: $color-primary4;
+$btnLite-borderColor: $color-primary1;
+$btnLite-bg: $color-primary5;
+// btn-lite hover
+$btnLite-hover: $btnLite-color;
+$btnLite-bg-hover: #fff3bb;
+$btnLite-borderColor-hover: $btnLite-borderColor;
+// btn-lite disable
+$btnLite-disable-bg: $color-neutrals2;
+$btnLite-disable-color: $color-neutrals1;
+// btn-lite 2
+$btnLite2-color: $color-primary3;
+$btnLite2-borderColor: $color-primary3;
+$btnLite2-bg: $color-neutrals1;
+// btn-lite 2 hover
+$btnLite2-hover: $color-primary2;
+$btnLite2-bg-hover: $color-neutrals3;
+$btnLite2-borderColor-hover: $color-primary2;
+// btn-lite 2 disable
+$btnLite2-disable-color: $btnLite2-color;
+$btnLite2-disable-bg: $color-neutrals3;
+$btnLite2-disable-borderColor: $btnLite2-borderColor;
+
+// btn-unborder
+$btnUnborder-color: $color-primary3;
+$btnUnborder-bg: transparent;
+$btnUnborder-border: transparent;
+// btn-unborder hover
+$btnUnborder-hover: $color-primary2;
+$btnUnborder-border-hover: $color-neutrals3;
+$btnUnborder-bg-hover: $color-neutrals3;
+// btn-unborder disable
+$btnUnborder-disable-bg: transparent;
+$btnUnborder-disable-color: $color-neutrals3;
+
+// btn size (md - sm)
+$btn-md: $btn-fontSize;
+$btn-md-padding: $btn-padding;
+$btn-sm: 1.2rem;
+$btn-sm-padding: 0.5rem 0.6rem;
+
+//btn icon
+$btn-icn-size: 2rem;
+//btn icon sm
+$btn-icn-size-sm: 1.5rem;
+
+// LIST --------------------------------------------------------------------
+$list-paddingLeft: 20px;
+$list-marginBottom: 20px;
+$list-markerColor: $color-primary2;
+$list-markerSize: 15px;
+// list ul
+$list-style: disc;
+// list ol (1,2,..)
+$list-style-ord: decimal;
+
+// TABLE --------------------------------------------------------------------
+$table-border: 1px solid #ccc;
+$table-bg: $color-neutrals1;
+$table-paddingCell: 10px; // padding th td
+$table-borderCell: none; // border th td
+// th (thead)
+$table-bgTh: $color-neutrals4; // background th
+$table-sizeTh: 14px; // font-size th
+$table-positionTh: left; // text-align th
+$table-fontWeightTh: 400; // font-weight th
+//td (tbody)
+$table-bgTd: $color-neutrals1; // background td
+$table-sizeTh: 12px; // font-size th
+$table-positionTd: left; // text-align td
+
+// FORM ---------------------------------------------------------------------
+$form-groupGap: 20px; // groupFields grid-gap
+$form-itemMargin: 10px; // itemField margin-bottom
+// label
+$form-labelSize: 12px; // font-size label
+$form-labelWeight: 700; // font-weight label
+$form-labelTextTransform: uppercase; // text-transform label
+$form-labelMarginBottom: 5px; // text-transform label
+// input & textarea
+$form-inputPadding: 5px 15px; // padding input
+$form-inputborder: 1px solid #ccc; // border input
+$form-inputbg: $color-neutrals1; // background input
+$form-inputRadius: 5px; // border-radius input
+$form-inputHeight: 40px; // height input
+// checkbox
+$form-checkLabelSize: 1.6rem; // label font-size
+$form-checkFontWeight: 400; // label font-weight
+$form-checkTextTransform: none; // label font-weight
+$form-checkWidth: 24px; // checkbox width
+$form-checkHeight: 24px; // checkbox height
+$form-checkBg: $color-neutrals2;
+$form-checkBorder: 2px solid #a1a1a1;
+$form-checkBgCheck: #3e3e3e;
+$form-checkBorderCheck: $form-checkBgCheck;
+$form-checkBorderShadowCheck: 0 0 0 3px rgba(0, 0, 0, 0.12);
+$form-checkRadius: 4px; // checkbox border-radius
+$form-checkGap: 10px; // gap
+$form-checkIconCheck: "\e90a";
+$form-checkIconColorCheck: $color-neutrals1;
+$form-checkIconSizeCheck: 1.1rem;
+$form-checkColorDisableLabel: $color-neutrals2;
+$form-checkBgDisable: $form-checkColorDisableLabel;
+
+// radio
+$form-radioLabelSize: 13px; // label font-size
+$form-radioFontWeight: 400; // label font-weight
+$form-radioTextTransform: none; // label font-weight
+$form-radioMarginRight: 5px; // radio margin-right
+$form-radioWidth: 14px; // radio width
+$form-radioHeight: 14px; // radio height
+$form-radioRadius: 50%; // radio border-radius
+$form-radioedColor: $color-primary1; // radion checked color
+// switch
+$form-switchWith: 48px;
+$form-switchHeight: 25px;
+$form-switchBorderRadius: 20px;
+$form-switchBg: $color-neutrals3;
+$form-switchBgCheck: $color-neutrals3;
+$form-switchBgButton: $color-neutrals2;
+$form-switchBorderButton: $color-neutrals3;
+$form-switchShadowButton: 0 2px 4px 0 #27272726;
+$form-switcRadiusButton: 50%;
+$form-switcBgButtonCheck: $color-primary4;
+// datepicker
+$form-datepickefieldWidth: 348px;
+$form-datepickefieldHeight: 52px;
+$form-datepickefieldBorder: 1px solid $color-neutrals3;
+$form-datepickefieldBorderRadius: 12px;
+$form-datepickefieldBg: 1px solid $color-neutrals3;
+$form-datepickefieldIcon: "\e909";
+$form-datepickefieldIconSize: 2.4rem;
+$form-datepickerBorderRadius: 16px;
+$form-datepickeHeight: 334px;
+$form-datepickeLabel: 1.4rem;
+$form-datepickeColorDay: $color-neutrals4;
+$form-datepickeBgDatenow: $color-semanticLight1;
+$form-datepickeFontWeightDate: $medium;
+$form-datepickeBgDateSelected: $color-neutrals6;
+$form-datepickeBgDateRange: $color-neutralsLight1;
+
+// HEADER ------------------------------------------------------------------
+$header-bg: $color-neutrals1;
+// logo
+$header-logoWidth: 200px; // logo width
+$header-logoWidth-mobile: 130px; // logo width mobile
+$header-logoPadding: 20px 0; // logo padding
+// Menu
+$nav-fontFamily: $fontFamily-default; // menu font-family
+$nav-size: 18px; // menu font-size
+$nav-fontWeight: 700; // menu font-size
+$nav-color: $color-primary1; // menu color
+$nav-color-hover: $color-primary2; // menu color actif et hover
+$nav-gap: 25px; // gap item
+// Menu Mobile
+$nav-mobile-btnColor: $nav-color-hover; // color 3 band
+$nav-mobile-btnBg: $color-neutrals1; // background btn nav
+$nav-mobile-Bg: $color-neutrals1; // background nav
+$nav-mobile-shadow: 0 13px 26px #00000029; // box-shadow nav
+
+// BREADCRUMB ------------------------------------------------------------------
+$breadcrumb-nav-color: $color-neutrals4;
+$breadcrumb-nav-size: 1.4rem;
+$breadcrumb-nav-weight: $medium;
+$breadcrumb-nav-lineHeight: 1.1;
+$breadcrumb-nav-gap: 3.5rem;
+//arrow
+$breadcrumb-arrow-width: 0.6rem;
+$breadcrumb-arrow-color: $breadcrumb-nav-color;
+// hover
+$breadcrumb-nav-color-hover: $color-primary4;
+$breadcrumb-nav-borderColor-hover: $breadcrumb-nav-color-hover;

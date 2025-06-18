@@ -1,0 +1,508 @@
+<div class="sectDesign">
+  <h2>Datepicker</h2>
+  <div class="listCol listCol--col3">
+    <div class="listCol__item">
+      <h3>Datepicker simple</h3>
+      <app-allfields
+        typeField="date"
+        [parentForm]="formDefault"
+        nameField="date"
+        textLable="Choose a date"
+        (actionField)="dateform($event)"
+      ></app-allfields>
+    </div>
+    <div class="listCol__item">
+      <h3>Datepicker Double 1</h3>
+      <app-allfields
+        typeField="dateRange"
+        [parentForm]="formDefault"
+        nameFieldStart="dateStart"
+        nameFieldEnd="dateEnd"
+        textLable="Enter a date range"
+        (actionField)="dateform($event)"
+      ></app-allfields>
+    </div>
+    <div class="listCol__item">
+      <h3>Datepicker Double 2</h3>
+      <app-allfields
+        typeField="date"
+        [parentForm]="formDefault"
+        nameField="dateStart"
+        textLable="Date start"
+        (actionField)="dateform($event)"
+        [filterDate]="filterWeek"
+      ></app-allfields>
+      au
+      <app-allfields
+        typeField="date"
+        [parentForm]="formDefault"
+        nameField="dateEnd"
+        textLable="Date end"
+        (actionField)="dateform($event)"
+        [filterDate]="filterWeek"
+      ></app-allfields>
+    </div>
+  </div>
+</div>
+<div class="sectDesign">
+  <h2>Timepicker</h2>
+  <div class="cntFormat">
+    <span>Format 24heures</span>
+    <app-allfields
+      typeField="switchButton"
+      [parentForm]="formDefault"
+      nameField="formatTime"
+      [formatTime]="changeformatTime"
+      (actionField)="changeFormatDate($event)"
+    ></app-allfields>
+  </div>
+  <app-allfields
+    typeField="time"
+    [parentForm]="formDefault"
+    nameField="time"
+    (actionField)="dateform($event)"
+  ></app-allfields>
+</div>
+<div class="sectDesign">
+  <h2>Checkbox</h2>
+  <div class="listCol">
+    <div class="listCol__item">
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="checkbox"
+            [parentForm]="formDefault"
+            nameField="chose"
+            textLable="One option"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="checkbox"
+            [parentForm]="formDefault"
+            nameField="chose1"
+            textLable="One option"
+            (actionField)="dateform($event)"
+            [size]="'sm'"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="checkbox"
+            [parentForm]="formDefault"
+            nameField="chose4"
+            textLable="One option"
+            (actionField)="dateform($event)"
+            [disable]="true"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+    <div class="listCol__item">
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="checkbox"
+            [parentForm]="formDefault"
+            nameField="chose2"
+            textLable="One option"
+            (actionField)="dateform($event)"
+            [checkAll]="true"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="checkbox"
+            [parentForm]="formDefault"
+            nameField="chose3"
+            textLable="One option"
+            (actionField)="dateform($event)"
+            [size]="'sm'"
+            [checkAll]="true"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="checkbox"
+            [parentForm]="formDefault"
+            nameField="chose5"
+            textLable="One option"
+            (actionField)="dateform($event)"
+            [size]="'sm'"
+            [checkAll]="true"
+            [disable]="true"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sectDesign">
+  <h2>Text Input</h2>
+  <div class="listCol listCol--col3">
+    <div class="listCol__item">
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textInput"
+            [parentForm]="formDefault"
+            nameField="text"
+            textLable="Label"
+            icon="icn-cube"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textInput"
+            [parentForm]="formDefault"
+            nameField="text1"
+            textLable="Label"
+            [fieldError]="true"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textInput"
+            [parentForm]="formDefault"
+            nameField="text2"
+            textLable="Label"
+            [disable]="true"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+    <div class="listCol__item">
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textInput"
+            [parentForm]="formDefault"
+            nameField="text3"
+            textLable="Label"
+            size="md"
+            icon="icn-cube"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textInput"
+            [parentForm]="formDefault"
+            nameField="text4"
+            textLable="Label"
+            [fieldError]="true"
+            size="md"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textInput"
+            [parentForm]="formDefault"
+            nameField="text5"
+            textLable="Label"
+            [disable]="true"
+            size="md"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+    <div class="listCol__item">
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textInput"
+            [parentForm]="formDefault"
+            nameField="text6"
+            textLable="Label"
+            size="sm"
+            icon="icn-cube"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textInput"
+            [parentForm]="formDefault"
+            nameField="text7"
+            textLable="Label"
+            [fieldError]="true"
+            size="sm"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textInput"
+            [parentForm]="formDefault"
+            nameField="text8"
+            textLable="Label"
+            [disable]="true"
+            size="sm"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sectDesign">
+  <h2>Radio</h2>
+  <div class="listCol">
+    <div class="listCol__item">
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="radio"
+            [parentForm]="formDefault"
+            nameField="choseRadio"
+            textLable="One option"
+            valueRadio="chose 1"
+            refRadio="chosen1"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="radio"
+            [parentForm]="formDefault"
+            nameField="choseRadio"
+            textLable="One option"
+            valueRadio="chose 2"
+            refRadio="chosen2"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="radio"
+            [parentForm]="formDefault"
+            nameField="choseRadio"
+            textLable="One option"
+            valueRadio="chose 3"
+            refRadio="chosen3"
+            [disable]="true"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+    <div class="listCol__item">
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="radio"
+            [parentForm]="formDefault"
+            nameField="choseRadio2"
+            textLable="One option"
+            valueRadio="chose 1"
+            refRadio="chosen4"
+            size="sm"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="radio"
+            [parentForm]="formDefault"
+            nameField="choseRadio2"
+            textLable="One option"
+            valueRadio="chose 2"
+            refRadio="chosen5"
+            size="sm"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="radio"
+            [parentForm]="formDefault"
+            nameField="choseRadio2"
+            textLable="One option"
+            valueRadio="chose 3"
+            refRadio="chosen6"
+            [disable]="true"
+            size="sm"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sectDesign">
+  <h2>Textarea</h2>
+  <div class="listCol listCol--col3">
+    <div class="listCol__item">
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textarea"
+            [parentForm]="formDefault"
+            nameField="longText"
+            textLable="Label"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textarea"
+            [parentForm]="formDefault"
+            nameField="longText1"
+            textLable="Label"
+            [fieldError]="true"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textarea"
+            [parentForm]="formDefault"
+            nameField="longText2"
+            textLable="Label"
+            [disable]="true"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+    <div class="listCol__item">
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textarea"
+            [parentForm]="formDefault"
+            nameField="longText3"
+            textLable="Label"
+            [rows]="3"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textarea"
+            [parentForm]="formDefault"
+            nameField="longText4"
+            textLable="Label"
+            [fieldError]="true"
+            [rows]="3"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textarea"
+            [parentForm]="formDefault"
+            nameField="longText5"
+            textLable="Label"
+            [disable]="true"
+            [rows]="3"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+    <div class="listCol__item">
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textarea"
+            [parentForm]="formDefault"
+            nameField="longText6"
+            textLable="Label"
+            [rows]="2"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textarea"
+            [parentForm]="formDefault"
+            nameField="longText7"
+            textLable="Label"
+            [fieldError]="true"
+            [rows]="2"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="textarea"
+            [parentForm]="formDefault"
+            nameField="longText8"
+            textLable="Label"
+            [disable]="true"
+            [rows]="2"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sectDesign">
+  <h2>Select</h2>
+  <div class="listCol listCol--col3">
+    <div class="listCol__item">
+      <h3>Default</h3>
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="select"
+            [parentForm]="formDefault"
+            nameField="choseSelect"
+            placeholder="Sélectionner"
+            [list]="listSelect"
+            listItem="value"
+            listValue="viewValue"
+            listDisable="disable"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+    <div class="listCol__item">
+      <h3>Multiselect</h3>
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="select"
+            [parentForm]="formDefault"
+            nameField="choseSelect"
+            placeholder="Sélectionner"
+            [list]="listSelect"
+            listItem="value"
+            listValue="viewValue"
+            listDisable="disable"
+            [multipleSelect]="true"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+    <div class="listCol__item">
+      <h3>Icon select</h3>
+      <div class="listBtn">
+        <div class="listBtn__item">
+          <app-allfields
+            typeField="select"
+            [parentForm]="formDefault"
+            nameField="choseSelect"
+            placeholder="Sélectionner"
+            [list]="listSelect"
+            listItem="value"
+            listValue="viewValue"
+            listDisable="disable"
+            iconSelect="icon"
+            (actionField)="dateform($event)"
+          ></app-allfields>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

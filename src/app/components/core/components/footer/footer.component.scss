@@ -1,0 +1,66 @@
+@use "scss/common";
+@use "scss/lib";
+
+.sectFooter {
+  .footerIntern {
+    @include lib.padding(3rem 0);
+    a {
+      color: common.$color-primary2;
+      &:hover {
+        color: common.$color-primary4;
+      }
+    }
+    .logoFooter {
+      margin-bottom: 20px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: left;
+      }
+    }
+    .titleFooter {
+      font-size: 20px;
+      font-weight: common.$bold;
+      margin-bottom: 10px;
+    }
+    .cntFooter {
+      grid-gap: 90px;
+    }
+    .navFooter {
+      ul {
+        @include lib.resetList();
+      }
+      li {
+        margin-bottom: 7px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .listLink {
+      display: flex;
+      align-items: center;
+      grid-gap: 15px;
+    }
+  }
+  .footerCopyright {
+    @include lib.font-size(1.2rem);
+    .cntCopyright {
+      border-top: 1px solid common.$color-primary2;
+      @include lib.padding(2rem 0);
+      display: flex;
+      grid-gap: 10px;
+      justify-content: space-between;
+      @include lib.max(635px) {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    .logoHeart {
+      width: 15px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}

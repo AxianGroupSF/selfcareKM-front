@@ -1,0 +1,8 @@
+<div
+  class="boxStatus"
+  [ngClass]="[
+    listStatus.length > 0 ? 'boxStatus--' + listStatus[statusCode] : ''
+  ]"
+>
+  <ng-content></ng-content>
+</div>

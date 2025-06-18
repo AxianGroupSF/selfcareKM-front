@@ -1,0 +1,70 @@
+<div class="mainPaged">
+  <div
+    class="mainPaged__arrow mainPaged__arrow--prevDouble"
+    (click)="navPage('prevStart')"
+    (keypress)="navPage('prevStart')"
+    [ngClass]="{ 'mainPaged__arrow--disable': currentPag === 1 }"
+  ></div>
+  <div
+    class="mainPaged__arrow mainPaged__arrow--prev"
+    (click)="navPage('prev')"
+    (keypress)="navPage('prev')"
+    [ngClass]="{ 'mainPaged__arrow--disable': currentPag === 1 }"
+  ></div>
+
+  <ul>
+    @for (itemPage of newlistCurrent; track $index) {
+      @if (navMax > $index) {
+        @if (
+          listCurrent.length !== newlistCurrent.length &&
+          $index === 0 &&
+          navMax === newlistCurrent.length - 1
+        ) {
+          <li
+            [ngClass]="{ current: currentPag === listCurrent[$index].page }"
+            (click)="onPage(listCurrent[$index].page)"
+            (keypress)="onPage(listCurrent[$index].page)"
+          >
+            {{ listCurrent[$index].page }}
+          </li>
+          <li class="navDotted"></li>
+        }
+        <li
+          [ngClass]="{ current: currentPag === itemPage.page }"
+          (click)="onPage(itemPage.page)"
+          (keypress)="onPage(itemPage.page)"
+        >
+          {{ itemPage.page }}
+        </li>
+      } @else if ($index === navMax && $count !== navMax + 1) {
+        <li class="navDotted"></li>
+      } @else {
+        @if ($last) {
+          <li
+            [ngClass]="{ current: currentPag === itemPage.page }"
+            (click)="onPage(itemPage.page)"
+            (keypress)="onPage(itemPage.page)"
+          >
+            {{ itemPage.page }}
+          </li>
+        }
+      }
+    }
+  </ul>
+  <div
+    class="mainPaged__arrow mainPaged__arrow--next"
+    (click)="navPage('next')"
+    (keypress)="navPage('next')"
+    [ngClass]="{
+      'mainPaged__arrow--disable': currentPag === listCurrent.length
+    }"
+  ></div>
+  <div
+    class="mainPaged__arrow mainPaged__arrow--nextDouble"
+    (click)="navPage('nextEnd')"
+    (keypress)="navPage('nextEnd')"
+    [ngClass]="{
+      'mainPaged__arrow--disable': currentPag === listCurrent.length
+    }"
+  ></div>
+</div>

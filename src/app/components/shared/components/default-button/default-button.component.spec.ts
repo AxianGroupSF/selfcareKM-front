@@ -1,0 +1,27 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { DefaultButtonComponent } from './default-button.component';
+
+describe('DefaultButtonComponent', () => {
+  let component: DefaultButtonComponent;
+  let fixture: ComponentFixture<DefaultButtonComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [DefaultButtonComponent]
+    })
+    .compileComponents();
+<<<<<<< HEAD
+    
+=======
+
+>>>>>>> release-3.0.0
+    fixture = TestBed.createComponent(DefaultButtonComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

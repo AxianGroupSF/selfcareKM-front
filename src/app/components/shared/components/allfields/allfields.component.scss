@@ -1,0 +1,681 @@
+@use "scss/common/variable" as *;
+// datepicker
+$heightField: $form-datepickefieldHeight;
+::ng-deep {
+  .cntdatepicker {
+    .mat-mdc-text-field-wrapper {
+      width: $form-datepickefieldWidth;
+      border: $form-datepickefieldBorder;
+      border-radius: $form-datepickefieldBorderRadius;
+      &:hover {
+        .mat-mdc-form-field-focus-overlay {
+          background: $color-neutrals2;
+          border-radius: $form-datepickefieldBorderRadius;
+          opacity: 1;
+        }
+      }
+    }
+    .mdc-text-field {
+      &__input {
+        font-size: 14px !important;
+      }
+    }
+    .mdc-text-field--filled {
+      .mdc-floating-label--float-above {
+        transform: translateY(-182%) scale(0.75);
+        background-color: #fff;
+        padding: 0 3px;
+      }
+      &.mdc-text-field {
+        overflow: initial;
+      }
+      &:not(.mdc-text-field--disabled) {
+        background-color: $color-neutrals1;
+      }
+    }
+    .mat-mdc-form-field-flex {
+      height: $heightField;
+    }
+    .mat-mdc-form-field-infix {
+      min-height: $heightField;
+      padding-top: 16px;
+    }
+    .mat-mdc-floating-label {
+      top: calc($heightField / 2) !important;
+    }
+    .mdc-line-ripple::before,
+    .mdc-line-ripple::after {
+      content: none;
+    }
+    .mat-mdc-icon-button {
+      svg {
+        display: none;
+      }
+      &::before {
+        content: $form-datepickefieldIcon;
+        font-family: "socle", sans-serif;
+        font-size: $form-datepickefieldIconSize;
+      }
+    }
+  }
+  .mat-datepicker-content {
+    box-shadow: $boxShadow-3xl !important;
+    border-radius: $form-datepickerBorderRadius !important;
+    background-color: #fff !important;
+    .mat-calendar-content {
+      .mat-calendar-table {
+        border: none;
+        thead th {
+          background: none;
+          color: #a1a1a1;
+          font-size: 12px;
+        }
+        th,
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+    .mat-calendar-table-header-divider {
+      &::after {
+        content: none;
+      }
+      th {
+        padding: 0;
+      }
+    }
+    .mat-calendar-header {
+      .mdc-button__label {
+        color: $color-neutrals6;
+        font-size: $form-datepickeLabel;
+      }
+    }
+    .mat-calendar-table-header {
+      color: $form-datepickeColorDay;
+    }
+    .mat-calendar-body-today:not(.mat-calendar-body-selected):not(
+        .mat-calendar-body-comparison-identical
+      ) {
+      border-color: transparent;
+      background: $form-datepickeBgDatenow;
+    }
+    .mat-calendar-body-cell {
+      font-weight: $form-datepickeFontWeightDate;
+      font-size: 14px;
+    }
+    .mat-calendar-body-selected {
+      background-color: $form-datepickeBgDateSelected;
+    }
+    .mat-calendar-body-label {
+      visibility: hidden;
+      padding: 0 !important;
+    }
+    .mat-calendar-body-cell-content {
+      text-transform: uppercase;
+      font-size: smaller;
+      line-height: 1em;
+    }
+  }
+  .mat-calendar-body-in-range {
+    &::before {
+      background: $form-datepickeBgDateRange !important;
+    }
+  }
+}
+// switch button
+.switchField {
+  display: inline-block;
+  label {
+    display: inline-block;
+    position: relative;
+    width: $form-switchWith;
+    height: $form-switchHeight;
+    border-radius: $form-switchBorderRadius;
+    background: $form-switchBg;
+    transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    vertical-align: middle;
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1px;
+      width: 24px;
+      height: 24px;
+      background: $form-switchBgButton;
+      border: 1px solid $form-switchBorderButton;
+      box-shadow: $form-switchShadowButton;
+      border-radius: $form-switcRadiusButton;
+      transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        background 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+  input:checked + label {
+    background: $form-switchBgCheck;
+    &::before {
+      left: 23px;
+      background: $form-switcBgButtonCheck;
+    }
+  }
+}
+// checkbox
+.checkboxField {
+  display: inline-block;
+  input {
+    position: absolute;
+    opacity: 0;
+    & + label {
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: $form-checkGap;
+      font-size: $form-checkLabelSize;
+      text-transform: none;
+      font-weight: $form-checkFontWeight;
+      &::before {
+        content: "";
+        display: inline-block;
+        vertical-align: text-top;
+        width: $form-checkWidth;
+        height: $form-checkHeight;
+        background: $form-checkBg;
+        border: $form-checkBorder;
+        border-radius: $form-checkRadius;
+      }
+    }
+    &:hover + label,
+    &:checked + label {
+      &::before {
+        background: $form-checkBgCheck;
+        border-color: $form-checkBorderCheck;
+      }
+    }
+    &:focus + label {
+      &::before {
+        box-shadow: $form-checkBorderShadowCheck;
+      }
+    }
+    &:checked + label {
+      &::after {
+        content: $form-checkIconCheck;
+        font-family: "socle", sans-serif;
+        position: absolute;
+        left: 4.5px;
+        top: 8px;
+        color: $form-checkIconColorCheck;
+        font-size: $form-checkIconSizeCheck;
+        line-height: 1;
+      }
+    }
+    &:disabled + label {
+      color: $form-checkColorDisableLabel;
+      cursor: auto;
+      &::before {
+        box-shadow: none;
+        background: $form-checkBgDisable;
+      }
+    }
+  }
+  &--disable {
+    cursor: not-allowed;
+    input {
+      & + label {
+        color: #e4e4e4;
+        &::before {
+          background: #f8f8f8 !important;
+          border-color: #e4e4e4 !important;
+        }
+      }
+      &:checked + label {
+        &::before {
+          background: #e4e4e4 !important;
+          border-color: #e4e4e4 !important;
+        }
+      }
+    }
+    input,
+    label {
+      pointer-events: none;
+    }
+  }
+  &--checkAll {
+    input {
+      &:checked + label {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 7px;
+          height: 2px;
+          width: 10px;
+          background: #fff;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+  &--sm {
+    input {
+      & + label {
+        font-size: 14px;
+        &::before {
+          width: 16px;
+          height: 16px;
+        }
+      }
+      &:checked + label {
+        &::after {
+          left: 2.6px;
+          top: 7.7px;
+          font-size: 8px;
+        }
+      }
+    }
+    &.checkboxField--checkAll {
+      input {
+        &:checked + label {
+          &::after {
+            top: 50%;
+            left: 4.2px;
+            width: 7px;
+          }
+        }
+      }
+    }
+  }
+}
+// radio
+.radioField {
+  display: inline-block;
+  [type="radio"] {
+    &:checked,
+    &:not(:checked) {
+      position: absolute;
+      left: -9999px;
+      & + label {
+        position: relative;
+        padding-left: 34px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        color: #3e3e3e;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 24px;
+          height: 24px;
+          border: 2px solid #a1a1a1;
+          border-radius: 100%;
+          background: #fff;
+        }
+        &::after {
+          content: "";
+          width: 14px;
+          height: 14px;
+          background: #3e3e3e;
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          border-radius: 100%;
+          -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+        }
+      }
+    }
+    &:not(:checked) {
+      & + label {
+        &::after {
+          opacity: 0;
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+      }
+    }
+    &:checked {
+      & + label {
+        &::before {
+          border-color: #3e3e3e;
+        }
+        &::after {
+          opacity: 1;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+    }
+  }
+  &--sm {
+    [type="radio"] {
+      &:checked,
+      &:not(:checked) {
+        & + label {
+          padding-left: 24px;
+          font-size: 14px;
+          &::before {
+            top: 3px;
+            width: 16px;
+            height: 16px;
+          }
+          &::after {
+            width: 8px;
+            height: 8px;
+            top: 7px;
+            left: 4px;
+          }
+        }
+      }
+    }
+  }
+  &--disable {
+    cursor: not-allowed;
+    [type="radio"] {
+      &:checked,
+      &:not(:checked) {
+        & + label {
+          pointer-events: none;
+          color: #e4e4e4;
+          &::before {
+            border-color: #e4e4e4;
+          }
+          &::after {
+            background: #e4e4e4;
+          }
+        }
+      }
+    }
+  }
+}
+// input text and textarea
+@mixin positionLabel($width, $height, $heightLabel) {
+  width: $width;
+  height: $height;
+  label {
+    top: calc(($height - $heightLabel) / 2);
+  }
+  &.textField--fieldActif {
+    label {
+      top: calc(
+        ($height - $heightLabel) / 2 - ($height - $heightLabel) / 2 -
+          $heightLabel / 3
+      );
+    }
+  }
+}
+.textField {
+  border-radius: 12px;
+  border: 1px solid #e4e4e4;
+  background: #fff;
+  font-size: 14px;
+  position: relative;
+  padding: 14px 12px;
+  transition: all 0.2s ease-in-out;
+  &--md {
+    border-radius: 8px;
+    input,
+    textarea {
+      font-size: 11px;
+    }
+  }
+  &--sm {
+    border-radius: 6px;
+    padding: 2px 3px;
+    input,
+    textarea {
+      font-size: 9px;
+    }
+    label {
+      left: 3px !important;
+    }
+    &.textField--fieldActif {
+      label {
+        line-height: 1;
+      }
+    }
+  }
+  input,
+  textarea {
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: none;
+  }
+  label {
+    position: absolute;
+    left: 12px;
+    font-size: 14px;
+    color: #616161;
+    background: #fff;
+    padding: 0px 2px;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+  }
+  &--fieldActif {
+    label {
+      font-size: 12px;
+    }
+  }
+  &--error {
+    border-color: #da100b !important;
+    label {
+      color: #da100b;
+    }
+  }
+  &--disable {
+    cursor: not-allowed;
+    input,
+    textarea,
+    label {
+      pointer-events: none;
+    }
+    label,
+    i {
+      color: #e4e4e4;
+    }
+  }
+}
+.textField--input {
+  $heightLabel: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  @include positionLabel(348px, 52px, 24px);
+  &.textField--md {
+    @include positionLabel(427px, 40px, 24px);
+    i {
+      font-size: 15px !important;
+    }
+  }
+  &.textField--sm {
+    @include positionLabel(348px, 25px, 24px);
+    i {
+      font-size: 15px !important;
+    }
+  }
+  i {
+    font-size: 24px;
+    color: #272727;
+  }
+}
+.textField--textarea {
+  label {
+    top: 12px;
+  }
+  &.textField--fieldActif {
+    label {
+      top: -9px;
+    }
+  }
+}
+// text error
+.fieldError {
+  font-size: 12px;
+  color: #da100b;
+}
+// select
+::ng-deep {
+  .selectField {
+    .ng-select {
+      .ng-select-container {
+        background-color: #fff;
+        border-radius: 8px !important;
+        border: 1px solid #a1a1a1;
+        min-height: 40px;
+        .ng-value-container {
+          .ng-placeholder {
+            top: inherit;
+            padding-bottom: inherit;
+            padding-left: inherit;
+          }
+        }
+      }
+      &:not(.ng-select-multiple) {
+        .ng-value-container {
+          .ng-value {
+            width: 100%;
+            padding-right: 10px;
+            .ng-value-label {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;
+            }
+          }
+        }
+      }
+      .ng-arrow-wrapper {
+        width: 20px;
+        padding-right: 0;
+        transform: translateY(-3px);
+        .ng-arrow {
+          display: none;
+        }
+        &::before {
+          content: "";
+          display: block;
+          width: 9px;
+          height: 9px;
+          border: 1px solid #740808;
+          border-left: none;
+          border-top: none;
+          rotate: 45deg;
+        }
+      }
+      .ng-dropdown-panel.ng-select-bottom {
+        margin-top: 0px;
+        box-shadow: 0px 4px 14px 0px #0d2c711a;
+        border: none;
+      }
+      &.ng-select-multiple {
+        .ng-value-container {
+          padding-top: 0;
+        }
+        .ng-select-container {
+          .ng-value-container {
+            .ng-value {
+              font-size: 14px;
+              margin-bottom: 0;
+              color: #606060;
+              border-radius: 2px;
+              margin-right: 5px;
+              display: flex;
+              align-items: center;
+              direction: rtl;
+              background: transparent;
+            }
+            .ng-value-icon.left {
+              border: none;
+              font-size: 25px;
+              line-height: 0.7;
+            }
+          }
+        }
+        .ng-dropdown-panel {
+          .ng-dropdown-panel-items {
+            .ng-option {
+              &::before {
+                content: "";
+                display: inline-block;
+                vertical-align: text-top;
+                width: 16px;
+                height: 16px;
+                background: #f8f8f8;
+                border: 1px solid #a1a1a1;
+                border-radius: 4px;
+                margin-right: 10px;
+              }
+              &.ng-option-selected {
+                &::after {
+                  content: "\e90a";
+                  font-family: "socle", sans-serif;
+                  position: absolute;
+                  left: 14px;
+                  top: 15px;
+                  color: #ffffff;
+                  font-size: 0.7rem;
+                  line-height: 1;
+                  font-weight: 700;
+                }
+                &::before {
+                  background: #3e3e3e;
+                  border-color: #3e3e3e;
+                }
+              }
+              &:hover {
+                &::before {
+                  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+                }
+              }
+              &.ng-option-disabled {
+                &::before {
+                  border-color: #e4e4e4;
+                  box-shadow: none;
+                }
+              }
+              .ng-option-label {
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+      .ng-dropdown-panel {
+        .ng-dropdown-panel-items {
+          .ng-option {
+            color: #606060;
+            font-weight: 500;
+            position: relative;
+            &.ng-option-selected {
+              background-color: #a1a1a1 !important;
+              color: #272727;
+            }
+            &.ng-option-marked,
+            &:hover {
+              background-color: #fafafa;
+            }
+            &.ng-option-disabled {
+              color: #e4e4e4;
+            }
+            .ng-option-label {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+          }
+        }
+      }
+      &.ng-select-opened {
+        .ng-select-container {
+          border-color: #3e3e3e;
+        }
+      }
+    }
+  }
+}
+.fullwidth {
+  width: 100%;
+}

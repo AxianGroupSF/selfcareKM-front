@@ -1,0 +1,107 @@
+@mixin status($color, $bg) {
+  .cntNotification__icn {
+    color: $color;
+  }
+  .cntNotification__title {
+    color: $color;
+  }
+  &--bg {
+    background: $bg;
+  }
+  &__title {
+    color: $color;
+  }
+  &.cntNotification--border {
+    border-color: $color;
+  }
+  &__icn {
+    color: $color;
+  }
+}
+.cntNotification {
+  box-shadow:
+    0px 4px 6px -2px #10182808,
+    0px 12px 16px -4px #10182814;
+  border-radius: 8px;
+  background: #f8f8f8;
+  padding: 18px;
+  border-left: 5px solid transparent;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  color: #3e3e3e;
+  font-size: 14px;
+  max-width: 920px;
+  &__icn {
+    font-size: 20px;
+    translate: 0 -6px;
+  }
+  &__title {
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  &__content {
+    min-height: 21px;
+    margin-bottom: 17px;
+  }
+  &__body {
+    width: 100%;
+  }
+  &__close {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    position: relative;
+    cursor: pointer;
+    margin-left: auto;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 20px;
+      background: #616161;
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
+    &::before {
+      rotate: 45deg;
+    }
+    &::after {
+      rotate: -45deg;
+    }
+  }
+  &--info {
+    @include status(#1672ec, #c4dcfa);
+  }
+  &--success {
+    @include status(#2ab930, #c9edcb);
+  }
+  &--warning {
+    @include status(#ed9526, #fae4c8);
+  }
+  &--danger {
+    @include status(#da100b, #f5c3c2);
+  }
+  &--type {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 999;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+  }
+  &--open {
+    &.cntNotification--type {
+      right: 0;
+      opacity: 1;
+    }
+  }
+  .listbtn {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+}

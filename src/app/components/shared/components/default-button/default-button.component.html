@@ -1,0 +1,26 @@
+<button
+  class="btn"
+  [class]="[
+    aspectValue ? 'btn--' + aspectValue : '',
+    sizeValue ? 'btn--' + sizeValue : '',
+    iconValue ? 'btn--icn' + iconPositionValue : '',
+    disableValue ? 'btn--disable' : '',
+    fullWidthValue ? 'btn--fullWidth' : ''
+  ]"
+  (click)="actionButton()"
+  [disabled]="disableValue"
+>
+  <span class="btnintern">
+    @if (iconValue) {
+      <i class="{{ fontIconValue }}"></i>
+    }
+    @if (labelValue) {
+      {{ labelValue }}
+    } @else {
+      <ng-content></ng-content>
+    }
+    @if (doubleIconValue) {
+      <i class="{{ fontIcon2Value }}"></i>
+    }
+  </span>
+</button>

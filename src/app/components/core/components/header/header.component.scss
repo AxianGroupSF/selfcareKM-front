@@ -1,0 +1,31 @@
+@use "scss/common";
+@use "scss/lib";
+
+.sectHeader {
+  width: 100%;
+  z-index: 99;
+  background: common.$header-bg;
+  box-shadow: common.$boxShadow;
+  &--sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+}
+
+.headerIntern {
+  @include lib.flex-center(space-between);
+  .cntlogo {
+    a {
+      display: block;
+      width: 200px;
+      padding: 20px 0;
+      @include lib.max(992px) {
+        width: 130px;
+      }
+      img {
+        @include lib.imgFull(contain, left);
+      }
+    }
+  }
+}

@@ -1,0 +1,440 @@
+@if (parentForm) {
+<span class="cntForm" [formGroup]="parentForm">
+  @switch (typeField) { @case ("date") {
+  <mat-form-field class="cntdatepicker" (click)="dateBox.open()" onkeypress="">
+    <mat-label>{{ textLable }}</mat-label>
+    <input
+      matInput
+      readonly
+      [matDatepicker]="dateBox"
+      [matDatepickerFilter]="filterDate"
+      [formControlName]="nameField"
+      (ngModelChange)="checkForm($event)"
+      [min]="dateMarge.min"
+      [max]="dateMarge.max"
+      style="cursor: pointer"
+    />
+    <mat-datepicker-toggle matIconSuffix [for]="dateBox">
+    </mat-datepicker-toggle>
+    <mat-datepicker #dateBox></mat-datepicker>
+  </mat-form-field>
+  } @case ("dateRange") {
+  <mat-form-field
+    class="cntdatepicker"
+    (click)="dateBoxRange.open()"
+    onkeypress=""
+  >
+    <mat-label>{{ textLable }}</mat-label>
+    <mat-date-range-input [rangePicker]="dateBoxRange">
+      <input
+        matStartDate
+        readonly
+        [formControlName]="nameFieldStart"
+        (ngModelChange)="checkForm($event)"
+        style="cursor: pointer"
+      />
+      <input
+        matEndDate
+        readonly
+        [formControlName]="nameFieldEnd"
+        (ngModelChange)="checkForm($event)"
+        style="cursor: pointer"
+      />
+    </mat-date-range-input>
+    <mat-datepicker-toggle
+      matIconSuffix
+      [for]="dateBoxRange"
+    ></mat-datepicker-toggle>
+    <mat-date-range-picker #dateBoxRange></mat-date-range-picker>
+  </mat-form-field>
+  } @case ("time") {
+  <ngx-mat-timepicker-field
+    [format]="valueTime"
+    [defaultTime]="'11:11 PM'"
+    (ngModelChange)="checkForm($event)"
+    [formControlName]="nameField"
+  ></ngx-mat-timepicker-field>
+  } @case ("switchButton") {
+  <div class="switchField">
+    <input
+      type="checkbox"
+      hidden="hidden"
+      [formControlName]="nameField"
+      (ngModelChange)="checkForm($event)"
+      [id]="nameField"
+    />
+    <label [for]="nameField" [attr.aria-label]="nameField"></label>
+  </div>
+  } @case ("checkbox") {
+  <div
+    class="checkboxField"
+    [ngClass]="[
+      disable ? 'checkboxField--disable' : '',
+      checkAll ? 'checkboxField--checkAll' : '',
+      size ? 'checkboxField--' + size : ''
+    ]"
+  >
+    <input
+      type="checkbox"
+      [formControlName]="nameField"
+      [id]="nameField"
+      (ngModelChange)="checkForm($event)"
+    />
+
+    <label [for]="nameField">
+      @if (textLable) {
+      {{ textLable }}
+      }
+    </label>
+  </div>
+  } @case ("textInput") {
+  <div
+    class="textField textField--input"
+    [ngClass]="[
+      disable ? 'textField--disable' : '',
+      size ? 'textField--' + size : '',
+      fieldError ? 'textField--error' : '',
+      fullWidth ? 'fullwidth' : '',
+      hasValue(nameField) || isFocused || placeholder
+        ? 'textField--fieldActif'
+        : ''
+    ]"
+  >
+    <input
+      type="text"
+      [formControlName]="nameField"
+      [id]="nameField"
+      (focus)="onFocus($event)"
+      (blur)="onBlur($event)"
+      (ngModelChange)="checkForm($event)"
+      [placeholder]="placeholder"
+    />
+    @if (textLable) {
+    <label [for]="nameField">{{ textLable }}</label>
+    } @if (icon) {
+    <i class="{{ icon }}"></i>
+    }
+  </div>
+  } @case ("password") {
+  <div
+    class="textField textField--input"
+    [ngClass]="[
+      disable ? 'textField--disable' : '',
+      size ? 'textField--' + size : '',
+      fieldError ? 'textField--error' : '',
+      fullWidth ? 'fullwidth' : '',
+      hasValue(nameField) || isFocused || placeholder
+        ? 'textField--fieldActif'
+        : ''
+    ]"
+  >
+    <input
+      type="password"
+      [formControlName]="nameField"
+      [id]="nameField"
+      (focus)="onFocus($event)"
+      (blur)="onBlur($event)"
+      (ngModelChange)="checkForm($event)"
+      [placeholder]="placeholder"
+    />
+    @if (textLable) {
+    <label [for]="nameField">{{ textLable }}</label>
+    } @if (icon) {
+    <i class="{{ icon }}"></i>
+    }
+  </div>
+  } @case ("radio") {
+  <div
+    class="radioField"
+    [ngClass]="[
+      disable ? 'radioField--disable' : '',
+      size ? 'radioField--' + size : ''
+    ]"
+  >
+    <input
+      type="radio"
+      [id]="refRadio"
+      [attr.name]="nameField"
+      [formControlName]="nameField"
+      [value]="valueRadio"
+      (ngModelChange)="checkForm($event)"
+    />
+    @if (textLable) {
+    <label [for]="refRadio">{{ textLable }}</label>
+    }
+  </div>
+  } @case ("textarea") {
+  <div
+    class="textField textField--textarea"
+    [ngClass]="[
+      disable ? 'textField--disable' : '',
+      fieldError ? 'textField--error' : '',
+      fullWidth ? 'fullwidth' : '',
+      hasValue(nameField) || isFocused || placeholder
+        ? 'textField--fieldActif'
+        : ''
+    ]"
+  >
+    @if (textLable) {
+    <label [for]="nameField">{{ textLable }}</label>
+    }
+    <textarea
+      [formControlName]="nameField"
+      [id]="nameField"
+      (focus)="onFocus($event)"
+      (blur)="onBlur($event)"
+      (ngModelChange)="checkForm($event)"
+      [placeholder]="placeholder"
+      [rows]="rows"
+    ></textarea>
+  </div>
+  } @case ("select") {
+  <div class="selectField" [ngClass]="{ fullwidth: fullWidth }">
+    @if (!noObject) {
+    <ng-select
+      [multiple]="multipleSelect"
+      [closeOnSelect]="!multipleSelect"
+      [searchable]="autocomplite"
+      [placeholder]="placeholder"
+      [formControlName]="nameField"
+      [clearable]="multipleSelect"
+      (change)="checkForm($event)"
+    >
+      @for (item of list; track $index) {
+      <ng-option [value]="item[listItem]" [disabled]="item[listDisable]">
+        <span>{{ item[listValue] }}</span>
+        @if (iconSelect) {
+        <i class="{{ item[iconSelect] }}"></i>
+        }
+      </ng-option>
+      }
+    </ng-select>
+    }@else {
+    <ng-select
+      [multiple]="multipleSelect"
+      [closeOnSelect]="!multipleSelect"
+      [searchable]="autocomplite"
+      [placeholder]="placeholder"
+      [formControlName]="nameField"
+      [clearable]="multipleSelect"
+      (change)="checkForm($event)"
+      [items]="list"
+    >
+    </ng-select>
+    }
+  </div>
+  } @default { No type. } } @if (fieldError) {
+  <div class="fieldError">{{ textError }}</div>
+  }
+</span>
+} @else { @switch (typeField) { @case ("date") {
+<mat-form-field class="cntdatepicker" (click)="dateBox.open()" onkeypress="">
+  <mat-label>{{ textLable }}</mat-label>
+  <input
+    matInput
+    readonly
+    [matDatepicker]="dateBox"
+    [matDatepickerFilter]="filterDate"
+    [(ngModel)]="actionModel"
+    [min]="dateMarge.min"
+    [max]="dateMarge.max"
+    style="cursor: pointer"
+  />
+  <mat-datepicker-toggle matIconSuffix [for]="dateBox"> </mat-datepicker-toggle>
+  <mat-datepicker #dateBox></mat-datepicker>
+</mat-form-field>
+} @case ("dateRange") {
+<mat-form-field
+  class="cntdatepicker"
+  (click)="dateBoxRange.open()"
+  onkeypress=""
+>
+  <mat-label>{{ textLable }}</mat-label>
+  <mat-date-range-input [rangePicker]="dateBoxRange">
+    <input
+      matStartDate
+      readonly
+      [(ngModel)]="actionModelStart"
+      style="cursor: pointer"
+    />
+    <input
+      matEndDate
+      readonly
+      [(ngModel)]="actionModelEnd"
+      style="cursor: pointer"
+    />
+  </mat-date-range-input>
+  <mat-datepicker-toggle
+    matIconSuffix
+    [for]="dateBoxRange"
+  ></mat-datepicker-toggle>
+  <mat-date-range-picker #dateBoxRange></mat-date-range-picker>
+</mat-form-field>
+} @case ("time") {
+<ngx-mat-timepicker-field
+  [format]="valueTime"
+  [defaultTime]="'11:11 PM'"
+  [(ngModel)]="actionModel"
+></ngx-mat-timepicker-field>
+} @case ("switchButton") {
+<div class="switchField">
+  <input
+    type="checkbox"
+    hidden="hidden"
+    [(ngModel)]="actionModel"
+    [id]="nameField"
+  />
+  <label [for]="nameField" [attr.aria-label]="nameField"></label>
+</div>
+} @case ("checkbox") {
+<div
+  class="checkboxField"
+  [ngClass]="[
+    disable ? 'checkboxField--disable' : '',
+    checkAll ? 'checkboxField--checkAll' : '',
+    size ? 'checkboxField--' + size : ''
+  ]"
+>
+  <input type="checkbox" [(ngModel)]="actionModel" [id]="nameField" />
+
+  <label [for]="nameField">
+    @if (textLable) {
+    {{ textLable }}
+    }
+  </label>
+</div>
+} @case ("textInput") {
+<div
+  class="textField textField--input"
+  [ngClass]="[
+    disable ? 'textField--disable' : '',
+    size ? 'textField--' + size : '',
+    fieldError ? 'textField--error' : '',
+    fullWidth ? 'fullwidth' : '',
+    hasValue(actionModel) || isFocused || placeholder
+      ? 'textField--fieldActif'
+      : ''
+  ]"
+>
+  <input
+    type="text"
+    [(ngModel)]="actionModel"
+    [id]="nameField"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+    [placeholder]="placeholder"
+  />
+  @if (textLable) {
+  <label [for]="nameField">{{ textLable }}</label>
+  } @if (icon) {
+  <i class="{{ icon }}"></i>
+  }
+</div>
+} @case ("password") {
+<div
+  class="textField textField--input"
+  [ngClass]="[
+    disable ? 'textField--disable' : '',
+    size ? 'textField--' + size : '',
+    fieldError ? 'textField--error' : '',
+    fullWidth ? 'fullwidth' : '',
+    hasValue(actionModel) || isFocused || placeholder
+      ? 'textField--fieldActif'
+      : ''
+  ]"
+>
+  <input
+    type="password"
+    [id]="nameField"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+    [(ngModel)]="actionModel"
+    [placeholder]="placeholder"
+  />
+  @if (textLable) {
+  <label [for]="nameField">{{ textLable }}</label>
+  } @if (icon) {
+  <i class="{{ icon }}"></i>
+  }
+</div>
+} @case ("radio") {
+<div
+  class="radioField"
+  [ngClass]="[
+    disable ? 'radioField--disable' : '',
+    size ? 'radioField--' + size : ''
+  ]"
+>
+  <input
+    type="radio"
+    [id]="refRadio"
+    [attr.name]="nameField"
+    [(ngModel)]="actionModel"
+    [value]="valueRadio"
+  />
+  @if (textLable) {
+  <label [for]="refRadio">{{ textLable }}</label>
+  }
+</div>
+} @case ("textarea") {
+<div
+  class="textField textField--textarea"
+  [ngClass]="[
+    disable ? 'textField--disable' : '',
+    fieldError ? 'textField--error' : '',
+    fullWidth ? 'fullwidth' : '',
+    hasValue(actionModel) || isFocused || placeholder
+      ? 'textField--fieldActif'
+      : ''
+  ]"
+>
+  @if (textLable) {
+  <label [for]="nameField">{{ textLable }}</label>
+  }
+  <textarea
+    [(ngModel)]="actionModel"
+    [id]="nameField"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+    [placeholder]="placeholder"
+    [rows]="rows"
+  ></textarea>
+</div>
+} @case ("select") {
+<div class="selectField" [ngClass]="{ fullwidth: fullWidth }">
+  @if (!noObject) {
+  <ng-select
+    [multiple]="multipleSelect"
+    [closeOnSelect]="!multipleSelect"
+    [searchable]="autocomplite"
+    [placeholder]="placeholder"
+    [(ngModel)]="actionModel"
+    [clearable]="multipleSelect"
+    (change)="checkForm($event)"
+  >
+    @for (item of list; track $index) {
+    <ng-option [value]="item[listItem]" [disabled]="item[listDisable]">
+      <span>{{ item[listValue] }}</span>
+      @if (iconSelect) {
+      <i class="{{ item[iconSelect] }}"></i>
+      }
+    </ng-option>
+    }
+  </ng-select>
+  }@else {
+  <ng-select
+    [multiple]="multipleSelect"
+    [closeOnSelect]="!multipleSelect"
+    [searchable]="autocomplite"
+    [placeholder]="placeholder"
+    [(ngModel)]="actionModel"
+    [clearable]="multipleSelect"
+    (change)="checkForm($event)"
+    [items]="list"
+  >
+  </ng-select>
+  }
+</div>
+} @default { No type. } } @if (fieldError) {
+<div class="fieldError">{{ textError }}</div>
+} }
