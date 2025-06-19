@@ -25,19 +25,19 @@ a.btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    @include lib.font-size(common.$btn-fontSize);
     gap: common.$btn-gap;
     font-weight: common.$btn-fontWeight;
     line-height: common.$btn-lineHeight;
     letter-spacing: common.$btn-letterSpacing;
     background: common.$btn-bg;
-    @include lib.padding(common.$btn-padding);
     border-radius: common.$btn-borderRadius;
     color: common.$btn-color !important;
     text-transform: common.$btn-textTransform;
     text-decoration: none !important;
     border: common.$btn-border;
     transition: common.$transition-default;
+    @include lib.font-size(common.$btn-fontSize);
+    @include lib.padding(common.$btn-padding);
   }
   &::before {
     content: "";

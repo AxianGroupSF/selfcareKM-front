@@ -48,10 +48,10 @@
     @include lib.font-size(1.2rem);
     .cntCopyright {
       border-top: 1px solid common.$color-primary2;
-      @include lib.padding(2rem 0);
       display: flex;
       grid-gap: 10px;
       justify-content: space-between;
+      @include lib.padding(2rem 0);
       @include lib.max(635px) {
         flex-direction: column;
         text-align: center;
