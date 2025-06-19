@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "allowedCommonJsDependencies": ["moment"],
-            "outputPath": "dist/design-system",
+            "outputPath": "dist/selfcare",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
