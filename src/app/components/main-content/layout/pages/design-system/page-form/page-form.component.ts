@@ -3,12 +3,11 @@ import { AllfieldsComponent } from '../../../../../shared/components/allfields/a
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-page-form',
-  standalone: true,
-  imports: [AllfieldsComponent],
-  templateUrl: './page-form.component.html',
-  styleUrl: './page-form.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-page-form',
+    imports: [AllfieldsComponent],
+    templateUrl: './page-form.component.html',
+    styleUrl: './page-form.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PageFormComponent {
   formDefault: FormGroup = new FormGroup({

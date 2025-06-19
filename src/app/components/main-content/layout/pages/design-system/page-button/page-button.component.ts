@@ -3,11 +3,10 @@ import { DefaultButtonComponent } from '../../../../../shared/components/default
 import { DefaultButton } from '../../../../../shared/models/default-button';
 
 @Component({
-  selector: 'app-page-button',
-  standalone: true,
-  imports: [DefaultButtonComponent],
-  templateUrl: './page-button.component.html',
-  styleUrl: './page-button.component.scss',
+    selector: 'app-page-button',
+    imports: [DefaultButtonComponent],
+    templateUrl: './page-button.component.html',
+    styleUrl: './page-button.component.scss'
 })
 export class PageButtonComponent {
   buttonTest: DefaultButton = {

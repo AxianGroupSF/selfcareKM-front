@@ -5,11 +5,10 @@ import { DefaultButtonComponent } from '../../../../../shared/components/default
 import { NotificationComponent } from '../../../../../shared/components/notification/notification.component';
 
 @Component({
-  selector: 'app-page-notification',
-  standalone: true,
-  imports: [NotificationComponent, DefaultButtonComponent],
-  templateUrl: './page-notification.component.html',
-  styleUrl: './page-notification.component.scss',
+    selector: 'app-page-notification',
+    imports: [NotificationComponent, DefaultButtonComponent],
+    templateUrl: './page-notification.component.html',
+    styleUrl: './page-notification.component.scss'
 })
 export class PageNotificationComponent {
   notification: DataNotif = {

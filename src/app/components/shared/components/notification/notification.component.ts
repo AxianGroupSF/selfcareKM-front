@@ -5,11 +5,10 @@ import { DefaultButtonComponent } from '../default-button/default-button.compone
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-notification',
-  standalone: true,
-  imports: [DefaultButtonComponent, CommonModule],
-  templateUrl: './notification.component.html',
-  styleUrl: './notification.component.scss',
+    selector: 'app-notification',
+    imports: [DefaultButtonComponent, CommonModule],
+    templateUrl: './notification.component.html',
+    styleUrl: './notification.component.scss'
 })
 export class NotificationComponent {
   @Input() title!: string;

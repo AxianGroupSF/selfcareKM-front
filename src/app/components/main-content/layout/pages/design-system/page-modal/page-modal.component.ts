@@ -5,11 +5,10 @@ import { ModalComponent } from '../../../../../shared/components/modal/modal.com
 import { AllfieldsComponent } from '../../../../../shared/components/allfields/allfields.component';
 
 @Component({
-  selector: 'app-page-modal',
-  standalone: true,
-  imports: [ModalComponent, AllfieldsComponent, DefaultButtonComponent],
-  templateUrl: './page-modal.component.html',
-  styleUrl: './page-modal.component.scss',
+    selector: 'app-page-modal',
+    imports: [ModalComponent, AllfieldsComponent, DefaultButtonComponent],
+    templateUrl: './page-modal.component.html',
+    styleUrl: './page-modal.component.scss'
 })
 export class PageModalComponent {
   formDefault: FormGroup = new FormGroup({

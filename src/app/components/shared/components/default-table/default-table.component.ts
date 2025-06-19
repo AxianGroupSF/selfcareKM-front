@@ -15,11 +15,10 @@ import { StatusComponent } from './status/status.component';
 import { BtnActionComponent } from './btn-action/btn-action.component';
 
 @Component({
-  selector: 'app-default-table',
-  standalone: true,
-  imports: [CommonModule, StatusComponent, BtnActionComponent],
-  templateUrl: './default-table.component.html',
-  styleUrl: './default-table.component.scss',
+    selector: 'app-default-table',
+    imports: [CommonModule, StatusComponent, BtnActionComponent],
+    templateUrl: './default-table.component.html',
+    styleUrl: './default-table.component.scss'
 })
 export class DefaultTableComponent {
   @Input() listStatus: string[] = [];

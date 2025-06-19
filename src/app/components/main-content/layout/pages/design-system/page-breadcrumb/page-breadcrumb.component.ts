@@ -3,11 +3,10 @@ import { Breadcrumb } from '../../../../../shared/models/breadcrumb';
 import { BreadcrumbComponent } from '../../../../../shared/components/breadcrumb/breadcrumb.component';
 
 @Component({
-  selector: 'app-page-breadcrumb',
-  standalone: true,
-  imports: [BreadcrumbComponent],
-  templateUrl: './page-breadcrumb.component.html',
-  styleUrl: './page-breadcrumb.component.scss',
+    selector: 'app-page-breadcrumb',
+    imports: [BreadcrumbComponent],
+    templateUrl: './page-breadcrumb.component.html',
+    styleUrl: './page-breadcrumb.component.scss'
 })
 export class PageBreadcrumbComponent {
   breadcrumb: Breadcrumb[] = [

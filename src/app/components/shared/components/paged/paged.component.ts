@@ -4,11 +4,10 @@ import { PagedService } from '../../services/paged.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-paged',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './paged.component.html',
-  styleUrl: './paged.component.scss',
+    selector: 'app-paged',
+    imports: [CommonModule],
+    templateUrl: './paged.component.html',
+    styleUrl: './paged.component.scss'
 })
 export class PagedComponent {
   private readonly pagedService = inject(PagedService);

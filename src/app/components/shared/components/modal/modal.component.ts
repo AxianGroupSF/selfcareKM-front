@@ -3,11 +3,10 @@ import { Component, Input, output } from '@angular/core';
 import { DefaultButtonComponent } from '../default-button/default-button.component';
 
 @Component({
-  selector: 'app-modal',
-  standalone: true,
-  imports: [DefaultButtonComponent, CommonModule],
-  templateUrl: './modal.component.html',
-  styleUrl: './modal.component.scss',
+    selector: 'app-modal',
+    imports: [DefaultButtonComponent, CommonModule],
+    templateUrl: './modal.component.html',
+    styleUrl: './modal.component.scss'
 })
 export class ModalComponent {
   @Input() title!: string;

@@ -15,11 +15,10 @@ import {
 } from '../../models/default-button';
 
 @Component({
-  selector: 'app-default-button',
-  standalone: true,
-  imports: [],
-  templateUrl: './default-button.component.html',
-  styleUrl: './default-button.component.scss',
+    selector: 'app-default-button',
+    imports: [],
+    templateUrl: './default-button.component.html',
+    styleUrl: './default-button.component.scss'
 })
 export class DefaultButtonComponent {
   label = input<string>('');

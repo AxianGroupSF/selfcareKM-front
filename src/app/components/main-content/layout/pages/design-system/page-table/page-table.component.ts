@@ -3,11 +3,10 @@ import { DataAction, TableHead } from '../../../../../shared/models/table';
 import { DefaultTableComponent } from '../../../../../shared/components/default-table/default-table.component';
 
 @Component({
-  selector: 'app-page-table',
-  standalone: true,
-  imports: [DefaultTableComponent],
-  templateUrl: './page-table.component.html',
-  styleUrl: './page-table.component.scss',
+    selector: 'app-page-table',
+    imports: [DefaultTableComponent],
+    templateUrl: './page-table.component.html',
+    styleUrl: './page-table.component.scss'
 })
 export class PageTableComponent {
   listStatus: string[] = ['info', 'approved', 'waiting', 'disapproved'];

@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-status',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './status.component.html',
-  styleUrl: './status.component.scss',
+    selector: 'app-status',
+    imports: [CommonModule],
+    templateUrl: './status.component.html',
+    styleUrl: './status.component.scss'
 })
 export class StatusComponent {
   listStatus: string[] = ['info', 'success', 'warning', 'danger'];

@@ -4,11 +4,10 @@ import { AllfieldsComponent } from '../../../../shared/components/allfields/allf
 import { HomeService } from './services/home.service';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [DefaultButtonComponent, AllfieldsComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+    selector: 'app-home',
+    imports: [DefaultButtonComponent, AllfieldsComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   lastName: string = '';

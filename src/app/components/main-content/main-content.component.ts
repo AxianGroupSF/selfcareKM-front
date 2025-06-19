@@ -5,11 +5,10 @@ import { DataNotif } from '../shared/models/notification';
 import { NotificationService } from '../shared/services/notification.service';
 
 @Component({
-  selector: 'app-main-content',
-  standalone: true,
-  imports: [RouterOutlet, NotificationComponent],
-  templateUrl: './main-content.component.html',
-  styleUrl: './main-content.component.scss',
+    selector: 'app-main-content',
+    imports: [RouterOutlet, NotificationComponent],
+    templateUrl: './main-content.component.html',
+    styleUrl: './main-content.component.scss'
 })
 export class MainContentComponent {
   notifService = inject(NotificationService);
