@@ -62,7 +62,7 @@ $heightField: $form-datepickefieldHeight;
       }
       &::before {
         content: $form-datepickefieldIcon;
-        font-family: "socle", sans-serif;
+        font-family: $fontIcon;
         font-size: $form-datepickefieldIconSize;
       }
     }

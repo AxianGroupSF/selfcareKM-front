@@ -1,22 +1,21 @@
 @use "variable";
 
+
 @font-face {
-  font-family: "#{variable.$fontIcon}";
-  src: url("#{variable.$pathFontIcon}/socle.eot?divwi9");
-  src: url("#{variable.$pathFontIcon}/socle.eot?divwi9#iefix")
-      format("embedded-opentype"),
-    url("#{variable.$pathFontIcon}/socle.ttf?divwi9") format("truetype"),
-    url("#{variable.$pathFontIcon}/socle.woff?divwi9") format("woff"),
-    url("#{variable.$pathFontIcon}/socle.svg?divwi9#socle") format("svg");
+  font-family: '#{variable.$fontIcon}';
+  src:  url('#{variable.$pathFontIcon}/selfcareKM.eot?ya0yj9');
+  src:  url('#{variable.$pathFontIcon}/selfcareKM.eot?ya0yj9#iefix') format('embedded-opentype'),
+    url('#{variable.$pathFontIcon}/selfcareKM.ttf?ya0yj9') format('truetype'),
+    url('#{variable.$pathFontIcon}/selfcareKM.woff?ya0yj9') format('woff'),
+    url('#{variable.$pathFontIcon}/selfcareKM.svg?ya0yj9#selfcareKM') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icn-"],
-[class*=" icn-"] {
+[class^="icn-"], [class*=" icn-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "#{variable.$fontIcon}", sans-serif !important;
+  font-family: '#{variable.$fontIcon}' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -29,23 +28,53 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icn-linkedin:before {
+.icn-view-slash:before {
   content: "\e900";
 }
-.icn-pinterest:before {
-  content: "\e901";
+.icn-favorie:before {
+  content: "\e921";
 }
-.icn-twitter:before {
-  content: "\e902";
+.icn-notification:before {
+  content: "\e916";
 }
-.icn-facebook:before {
-  content: "\e903";
+.icn-profile:before {
+  content: "\e917";
 }
-.icn-quote:before {
-  content: "\e904";
+.icn-search:before {
+  content: "\e918";
 }
-.icn-youtube:before {
-  content: "\e905";
+.icn-warning:before {
+  content: "\e919";
+}
+.icn-arrow-down:before {
+  content: "\e91a";
+}
+.icn-arrow-up:before {
+  content: "\e91b";
+}
+.icn-filter:before {
+  content: "\e91c";
+}
+.icn-menu:before {
+  content: "\e91d";
+}
+.icn-category:before {
+  content: "\e91e";
+}
+.icn-view:before {
+  content: "\e91f";
+}
+.icn-undo:before {
+  content: "\e920";
+}
+.icn-calendar1:before {
+  content: "\e922";
+}
+.icn-cards:before {
+  content: "\e924";
+}
+.icn-scan-barcode:before {
+  content: "\e923";
 }
 .icn-cube:before {
   content: "\e906";

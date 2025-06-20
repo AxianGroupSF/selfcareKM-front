@@ -59,19 +59,19 @@ $transition-default: all 0.3s ease-in-out; // transition General
 $boxShadow: $boxShadow-sm; // box-shadow General
 
 // DEFAULT -------------------------------------------------------------------
-$fontFamily-default: "Roboto"; // font-family primary
-$fontFamily2: "Montserrat"; // font-family secondary
-$fontIcon: "socle";
-$main-bg: $color-neutrals1; // background global des pages
-$txt-color-default: $color-primary4; // color default
+$fontFamily-default: "Inter"; // font-family primary
+$fontFamily2: $fontFamily-default; // font-family secondary
+$fontIcon: "selfcareKM";
+$main-bg: $color-primary5; // background global des pages
+$txt-color-default: $color-neutrals5; // color default
 
 $fontSize1: 1.4rem; // font-size global
 $fontSize2: 1.6rem; // font-size global seconde
 
-$lineHeight1: 1.6; // line-height global
+$lineHeight1: 1.5; // line-height global
 $lineHeight2: 1.2; // line-height global seconde
 
-$lettreSpacing1: 0.9px; // lettre-spacing global
+$lettreSpacing1: 0; // lettre-spacing global
 $lettreSpacing2: 0; // lettre-spacing global seconde
 
 $thin: 100; // Thin (Hairline)
@@ -86,45 +86,45 @@ $heavy: 900; // Black (Heavy)
 
 // HEADING : Title tag ------------------------------------------------------
 // H1
-$fontSize-h1: 4rem;
-$marginBottom-h1: 20px;
-$textTransform-h1: uppercase;
-$fontWeight-h1: $bold;
+$fontSize-h1: 2.4rem;
+$marginBottom-h1: 5px;
+$textTransform-h1: none;
+$fontWeight-h1: $semiBold;
 $color-h1: $color-primary2;
 
 // H2
-$fontSize-h2: 3rem;
-$marginBottom-h2: 20px;
-$textTransform-h2: uppercase;
-$color-h2: $color-primary2;
+$fontSize-h2: 1.8rem;
+$marginBottom-h2: 22px;
+$textTransform-h2: none;
+$color-h2: $color-primary4;
 
 // H3
-$fontSize-h3: 2.5rem;
+$fontSize-h3: 1.6rem;
 $marginBottom-h3: 20px;
-$textTransform-h3: uppercase;
-$color-h3: $color-primary2;
+$textTransform-h3: none;
+$color-h3: $color-primary4;
 
 // H4
-$fontSize-h4: 2rem;
+$fontSize-h4: 1.5rem;
 $marginBottom-h4: 20px;
-$textTransform-h4: uppercase;
-$color-h4: $color-primary2;
+$textTransform-h4: none;
+$color-h4: $color-primary4;
 
 // H5
-$fontSize-h5: 1.8rem;
+$fontSize-h5: 1.4rem;
 $marginBottom-h5: 20px;
-$textTransform-h5: uppercase;
-$color-h5: $color-primary2;
+$textTransform-h5: none;
+$color-h5: $color-primary4;
 
 // H6
-$fontSize-h6: 1.6rem;
+$fontSize-h6: 1.3rem;
 $marginBottom-h6: 20px;
-$textTransform-h6: uppercase;
-$color-h6: $color-primary2;
+$textTransform-h6: none;
+$color-h6: $color-primary4;
 
 // LINK : (Link tag <a>) ------------------------------------------------
-$linkColor: $color-primary1; // color par defaut
-$linkColor-hover: $color-primary2; // color au survol
+$linkColor: $color-neutrals6; // color par defaut
+$linkColor-hover: $color-primary4; // color au survol
 $linkTextDecoration: none; // text-decoration
 
 // BLOCKQUOTE --------------------------------------------------------------
@@ -147,11 +147,11 @@ $quote-right-positionRight: 15px;
 $quote-right-rotation: scaleX(-1);
 
 // SCROLL BAR ----------------------------------------------------------------
-$srollbar-thumb: $color-primary1; // bar color
+$srollbar-thumb: $color-neutrals4; // bar color
 $scrollbar-track: #f9f9f9; // scroll color
 $scrollbar-borderRadius: 5px; // border-radius scroll bar
 $scrollbar-boxShadow: inset 0 0 5px #ccc; // shadow intern
-$scrollbar-width: 3px; // width scrollbar
+$scrollbar-width: 5px; // width scrollbar
 $scrollbar-height: 6px;
 
 // BUTTON -------------------------------------------------------------------
