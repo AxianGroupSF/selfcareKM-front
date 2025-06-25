@@ -1,0 +1,23 @@
+@if (errorField()) {
+    @if (errorField().dirty || errorField().touched || checkField()) {
+        <div class="txtError">
+            @if (errorField().invalid) {
+                @if (errorField().errors?.['required']) {
+                    {{
+                        errortxt()
+                    }}
+                }
+                @if (errorField().errors?.['pattern']) {
+                    {{
+                        errortxt3()
+                    }}
+                }
+            }
+        </div>
+    }
+}
+@if (otherError()) {
+    <div class="txtError">
+        {{ errortxt2() }}
+      </div>
+}

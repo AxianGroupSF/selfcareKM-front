@@ -33,6 +33,7 @@ import * as _moment from 'moment';
 import 'moment/locale/fr';
 import { default as _rollupMoment } from 'moment';
 import { provideMomentDateAdapter } from '@angular/material-moment-adapter';
+import { ErrorFieldComponent } from '../error-field/error-field.component';
 
 const moment = _rollupMoment || _moment;
 
@@ -68,6 +69,7 @@ moment.updateLocale('fr', {
         ReactiveFormsModule,
         NgxMatTimepickerModule,
         NgSelectModule,
+        ErrorFieldComponent
     ],
     templateUrl: './allfields.component.html',
     styleUrl: './allfields.component.scss',
@@ -140,6 +142,13 @@ export class AllfieldsComponent {
   actionModelStart = model();
   actionModelEnd = model();
   isFocused: boolean = false;
+
+  // error
+  @Input() checkField: boolean = false;
+  @Input() errorField: any;
+  @Input() errortxt!: string;
+  @Input() errortxt2!: string;
+  @Input() otherError!: boolean;
 
   renderer = inject(Renderer2);
 
