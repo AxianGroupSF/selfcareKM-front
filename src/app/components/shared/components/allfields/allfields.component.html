@@ -223,17 +223,18 @@
     </ng-select>
     }
   </div>
-  } @default { No type. } } @if (fieldError) {
-  <div class="fieldError">{{ textError }}</div>
-  }
+  } @default { No type. } }
   <!-- error -->
   <app-error-field
-  [checkField]="checkField"
-  [errorField]="errorField"
-  [errortxt]="errortxt"
-  [otherError]="otherError"
-  [errortxt2]="errortxt2"
-></app-error-field>
+    [formValidation]="formValidation"
+    [errorField]="parentForm.get(nameField)"
+    [errortxtRequired]="errortxtRequired"
+    [otherError]="otherError"
+    [errortxtOther]="errortxtOther"
+    [errortxtPattern]="errortxtPattern"
+    [errortxtMin]="errortxtMin"
+    [errortxtMax]="errortxtMax"
+  ></app-error-field>
 </span>
 } @else { @switch (typeField) { @case ("date") {
 <mat-form-field class="cntdatepicker" (click)="dateBox.open()" onkeypress="">

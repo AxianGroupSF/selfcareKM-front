@@ -61,8 +61,8 @@ export class HeaderComponent {
       ],
     },
     {
-      link: 'services',
-      title: 'Services',
+      link: 'demo',
+      title: 'Demo',
     },
     {
       link: 'contacts',

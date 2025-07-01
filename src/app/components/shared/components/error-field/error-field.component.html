@@ -1,23 +1,28 @@
-@if (errorField()) {
-    @if (errorField().dirty || errorField().touched || checkField()) {
-        <div class="txtError">
-            @if (errorField().invalid) {
-                @if (errorField().errors?.['required']) {
-                    {{
-                        errortxt()
-                    }}
-                }
-                @if (errorField().errors?.['pattern']) {
-                    {{
-                        errortxt3()
-                    }}
-                }
-            }
-        </div>
-    }
-}
-@if (otherError()) {
-    <div class="txtError">
-        {{ errortxt2() }}
-      </div>
+@if (errorField()) { @if (errorField().dirty || errorField().touched ||
+formValidation()) {
+<div class="txtError">
+  @if (errorField().invalid) { @if (errorField().hasError('required')) {
+  <span>
+    {{ errortxtRequired() }}
+  </span>
+  } @if (errorField().hasError('pattern')) {
+  <span>
+    {{ errortxtPattern() }}
+  </span>
+  } @if (errorField().hasError('minlength')) {
+  <span>
+    {{ errortxtMin() }}
+  </span>
+  } @if (errorField().hasError('maxlength')) {
+  <span>
+    {{ errortxtMax() }}
+  </span>
+  } }
+</div>
+} } @if (otherError()) {
+<div class="txtError">
+  <span>
+    {{ errortxtOther() }}
+  </span>
+</div>
 }

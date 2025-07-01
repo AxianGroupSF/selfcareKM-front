@@ -1,0 +1,17 @@
+<div class="container">
+  <app-allfields
+    typeField="textInput"
+    [parentForm]="formDefault"
+    nameField="text"
+    textLable="Label"
+    icon="icn-cube"
+    [fieldError]="testError(formDefault.get('text')) || formValidation"
+    errortxtRequired="This field is required"
+    errortxtPattern="This field is pattern"
+    errortxtMin="This field is Min"
+    errortxtMax="This field is Max"
+    [formValidation]="formValidation"
+    (actionField)="dateform($event)"
+  ></app-allfields>
+  <app-default-button (action)="onAction()">Send</app-default-button>
+</div>

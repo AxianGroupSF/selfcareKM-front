@@ -54,26 +54,26 @@ moment.updateLocale('fr', {
 });
 
 @Component({
-    selector: 'app-allfields',
-    providers: [
-        provideMomentDateAdapter(MY_FORMATS),
-        { provide: MAT_DATE_LOCALE, useValue: 'fr' },
-        provideNativeDateAdapter(),
-    ],
-    imports: [
-        CommonModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatDatepickerModule,
-        FormsModule,
-        ReactiveFormsModule,
-        NgxMatTimepickerModule,
-        NgSelectModule,
-        ErrorFieldComponent
-    ],
-    templateUrl: './allfields.component.html',
-    styleUrl: './allfields.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-allfields',
+  providers: [
+    provideMomentDateAdapter(MY_FORMATS),
+    { provide: MAT_DATE_LOCALE, useValue: 'fr' },
+    provideNativeDateAdapter(),
+  ],
+  imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxMatTimepickerModule,
+    NgSelectModule,
+    ErrorFieldComponent,
+  ],
+  templateUrl: './allfields.component.html',
+  styleUrl: './allfields.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AllfieldsComponent {
   @Input() parentForm!: FormGroup;
@@ -133,7 +133,7 @@ export class AllfieldsComponent {
   //action
   @Output() actionField: EventEmitter<any> = new EventEmitter<any>();
 
-  // error
+  // text error
   @Input() fieldError: boolean = false;
   @Input() textError: string = 'Text error';
 
@@ -144,11 +144,18 @@ export class AllfieldsComponent {
   isFocused: boolean = false;
 
   // error
-  @Input() checkField: boolean = false;
+  @Input() formValidation: boolean = false;
   @Input() errorField: any;
-  @Input() errortxt!: string;
-  @Input() errortxt2!: string;
   @Input() otherError!: boolean;
+
+  @Input() errortxtRequired!: string;
+  @Input() errortxtPattern!: string;
+  @Input() errortxtMin!: string;
+  @Input() errortxtMax!: string;
+  @Input() errortxtOther!: string;
+
+  // pattern
+  @Input() valuePattern!: string;
 
   renderer = inject(Renderer2);
 

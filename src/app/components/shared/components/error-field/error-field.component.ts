@@ -1,17 +1,20 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-error-field',
   imports: [],
   templateUrl: './error-field.component.html',
-  styleUrl: './error-field.component.scss'
+  styleUrl: './error-field.component.scss',
 })
 export class ErrorFieldComponent {
-// error
-readonly checkField = input<boolean>(false);
-readonly errorField = input<any>();
-readonly errortxt = input<string>();
-readonly errortxt2 = input<string>();
-readonly errortxt3 = input<string>();
-readonly otherError = input<boolean>();
+  // error
+  readonly formValidation = input<boolean>(false);
+  readonly errorField = input<any>();
+  readonly otherError = input<boolean>();
+
+  readonly errortxtRequired = input<string>();
+  readonly errortxtPattern = input<string>();
+  readonly errortxtMin = input<string>();
+  readonly errortxtMax = input<string>();
+  readonly errortxtOther = input<string>();
 }
