@@ -84,7 +84,7 @@ export class AllfieldsComponent {
     | 'switchButton'
     | 'checkbox'
     | 'textInput'
-    | 'password'
+    | 'passwordInput'
     | 'radio'
     | 'textarea'
     | 'select'
