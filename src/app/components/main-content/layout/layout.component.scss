@@ -1,4 +1,41 @@
+@use "common/variable" as *;
+
+// .mainWrapper {
+//   padding-top: 30px;
+//   padding-bottom: 30px;
+// }
+
 .mainWrapper {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 0;
+  background-color: $color-neutrals2;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding-top: 87px;
 }
+.boxWrapper{
+  display: grid;
+  grid-template-columns: 287px 1fr;
+  padding-bottom: 0 !important;
+  transition: all 0.3s ease;
+  
+  &__aside{
+    transition: width 0.3s ease;
+  }
+  &__content{
+    overflow: auto;
+  }
+}
+.sectContent {
+  height: calc(100vh - 139px);
+  overflow-y: auto;
+  padding-bottom: 50px;
+}
+.boxWrapper.collapsed {
+  grid-template-columns: 100px 1fr;
+}
+.boxWrapper.collapsed  .boxWrapper__aside .txt{
+  display: none;
+}
+
+

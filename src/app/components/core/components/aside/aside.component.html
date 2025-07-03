@@ -1,0 +1,79 @@
+  <aside class="sectAside">
+    <div class="boxAside">
+      <div class="boxAside__access">
+        <div class="boxAccess">
+            <div class="title">
+              <div class="title__left">
+                <div class="sectLeft displayFlex">
+                  <i class="icn-scan-barcode"></i>
+                  <span class="txt" [class.hidden]="isCollapsed">Accès rapide</span>
+                </div>
+              </div>
+              <div class="title__right">
+                <div class="sectRight">
+                  <i class="icn-edit"></i>
+                </div>
+              </div>
+            </div>
+            <div class="menu">
+              <ul class="menu-list">
+                <li>
+                  <a href="#" class="displayFlex"><i class="icn-home" title="Accueil"></i><span class="txt" [class.hidden]="isCollapsed">Accueil</span></a>
+                  <span class="list-hover"><i class="icn-favorie"></i></span>
+                </li>
+                <li>
+                  <a href="#" class="displayFlex"><i class="icn-setting" title="Listes des comptes"></i><span class="txt" [class.hidden]="isCollapsed">Liste des comptes</span></a>
+                  <span class="list-hover"><i class="icn-favorie"></i></span>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </div>
+      <div class="boxAside__application">
+        <div class="boxApplication">
+          <div class="title displayFlex">
+            <i class="icn-cards"></i>
+            <span class="txt" [class.hidden]="isCollapsed">Applications </span>
+          </div>
+          <div class="menu">
+            <ul class="menu-list">
+              <li class="noHover">
+                <a routerLink="/app/user" class="displayFlex"> <i class="icn-profile" title="Utilisateurs"></i> <span class="txt" [class.hidden]="isCollapsed">Utilisateurs</span> </a>
+                <span><i class="icn-arrow-down arrow"></i></span>
+              </li>
+              <li class="noHover">
+                <a href="#" class="displayFlex"> <i class="icn-cube" title="Groupes"></i> <span class="txt" [class.hidden]="isCollapsed">Groupes</span> </a>
+                <span><i class="icn-arrow-down arrow"></i></span>
+              </li>
+              <li>
+                <a href="#" class="displayFlex"> <i class="icn-profile" title="Agents"></i> <span class="txt" [class.hidden]="isCollapsed">Agents</span></a>
+                <span class="list-hover"><i class="icn-favorie"></i></span>
+              </li>
+              <li>
+                <a href="#" class="displayFlex"> <i class="icn-notif-success" title="Stocks"></i> <span class="txt" [class.hidden]="isCollapsed">Stocks</span></a>
+                <span class="list-hover"><i class="icn-favorie"></i></span>
+              </li>
+              <li class="noHover">
+                <a href="#" class="displayFlex"><i class="icn-cards" title="Paiements"></i> <span class="txt" [class.hidden]="isCollapsed">Paiements</span></a>
+                <span><i class="icn-arrow-down arrow"></i></span>
+              </li>
+              <li>
+                <a href="#" class="displayFlex"> <i class="icn-check" title="Base éligible"></i> <span class="txt" [class.hidden]="isCollapsed">Base éligible</span></a>
+                <span class="list-hover"><i class="icn-favorie"></i></span>
+              </li>
+              <li>
+                <a href="#" class="displayFlex"> <i class="icn-setting" title="Régularisation"></i> <span class="txt" [class.hidden]="isCollapsed">Régularisation</span></a>
+                <span class="list-hover"><i class="icn-favorie"></i></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sectIcon" (click)="onToggleSidebar()">
+        <span class="boxIcon">
+          <i class="icn-undo"></i>
+        </span>
+    </div>
+  </aside>
