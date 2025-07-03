@@ -1,0 +1,154 @@
+
+@use "common/variable" as *;
+
+ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style-type: none;
+      cursor: pointer;
+    }
+}
+
+.menu-list{
+    li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        box-sizing: border-box;
+
+        height: 45px;
+        a{
+            color: $color-neutrals6;
+            width: 100%;
+            // &:hover {
+            //     background-color: $color-neutrals1;
+            // }
+        }
+        // a:hover ~ span.list-hover{
+        //     display: block;
+        // }
+        span.list-hover{
+            display: none;
+            i{
+                color: $color-primary1;
+            }
+        }
+        &:hover:not(.noHover) {
+            border-radius: 5px;
+            background-color: $color-neutrals1;
+            span.list-hover{
+                display: block;
+            }
+        }
+    }
+}
+
+.arrow{
+font-size: 6px;
+}
+
+.sectAside {
+    border-right: 1px solid $color-neutrals3;
+    position: relative;
+    // height: calc(100vh - 87px);
+    height: 100vh;
+
+    .boxAside {
+        padding: 10px;
+
+        transition: width 0.3s ease;
+        overflow: hidden;
+
+        &__access {
+            border-bottom: 1px solid $color-neutrals3;
+            padding-bottom: 30px;
+            .boxAccess {
+                .title {
+                    display: flex;
+                    justify-content: space-between;
+
+                    &__left {
+                        .sectLeft {
+                            // display: flex;
+                            // align-items: center;
+                            // gap: 10px;
+                            color: $color-neutrals4;
+                            font-size: 12px;
+                            font-weight: 500;
+                            i{
+                                font-size: 18px;
+                            }
+                        }
+                    }
+
+                    &__right {
+                        .sectRight {
+                        i {
+                            color: $color-neutrals5 !important;
+                            font-size: 18px;
+                        }
+                        }
+                    }
+                }
+
+                .menu {
+                    margin-top: 15px;
+                }
+            }
+        }
+        &__application{
+        padding-top: 20px;
+        .boxApplication{
+            .title{
+                // display: flex;
+                // align-items: center;
+                // gap: 10px;
+                color: $color-neutrals4;
+                padding-bottom: 3px;
+            }
+        }
+        }
+    }
+      
+    .sectIcon{
+      position: absolute;
+      top: 0;
+      right: -25px;
+      width: 24px;
+      height: 22px;
+      padding-left: 5px;
+      box-sizing: border-box;
+      color: $color-neutrals1;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      background: $color-neutralsLight5;
+      cursor: pointer;
+      i{
+        cursor: pointer;
+      }
+      &:hover {
+        background-color: $color-primary4;
+      }
+    }
+}
+.hidden {
+    display: none;
+}
+.displayFlex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.noHover{
+    button{
+        width: 100%;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        background: none;
+        color: $color-neutrals6;
+    }
+}
