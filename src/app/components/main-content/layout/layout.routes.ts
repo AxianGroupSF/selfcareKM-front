@@ -33,6 +33,17 @@ export const routes: Routes = [
             (c) => c.routes
           ),
       },
+      {
+        path: 'demo',
+        title: 'Demo',
+        loadComponent: () =>
+          import('./pages/demo/demo.component').then(
+            (c) => c.DemoComponent
+          ),
+          data: {
+            breadcrumb: 'Demo',
+          },
+      },
     ],
   },
 ];

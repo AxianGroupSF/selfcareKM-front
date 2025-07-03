@@ -33,6 +33,7 @@ import * as _moment from 'moment';
 import 'moment/locale/fr';
 import { default as _rollupMoment } from 'moment';
 import { provideMomentDateAdapter } from '@angular/material-moment-adapter';
+import { ErrorFieldComponent } from '../error-field/error-field.component';
 
 const moment = _rollupMoment || _moment;
 
@@ -53,25 +54,26 @@ moment.updateLocale('fr', {
 });
 
 @Component({
-    selector: 'app-allfields',
-    providers: [
-        provideMomentDateAdapter(MY_FORMATS),
-        { provide: MAT_DATE_LOCALE, useValue: 'fr' },
-        provideNativeDateAdapter(),
-    ],
-    imports: [
-        CommonModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatDatepickerModule,
-        FormsModule,
-        ReactiveFormsModule,
-        NgxMatTimepickerModule,
-        NgSelectModule,
-    ],
-    templateUrl: './allfields.component.html',
-    styleUrl: './allfields.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-allfields',
+  providers: [
+    provideMomentDateAdapter(MY_FORMATS),
+    { provide: MAT_DATE_LOCALE, useValue: 'fr' },
+    provideNativeDateAdapter(),
+  ],
+  imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxMatTimepickerModule,
+    NgSelectModule,
+    ErrorFieldComponent,
+  ],
+  templateUrl: './allfields.component.html',
+  styleUrl: './allfields.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AllfieldsComponent {
   @Input() parentForm!: FormGroup;
@@ -82,7 +84,7 @@ export class AllfieldsComponent {
     | 'switchButton'
     | 'checkbox'
     | 'textInput'
-    | 'password'
+    | 'passwordInput'
     | 'radio'
     | 'textarea'
     | 'select'
@@ -131,7 +133,7 @@ export class AllfieldsComponent {
   //action
   @Output() actionField: EventEmitter<any> = new EventEmitter<any>();
 
-  // error
+  // text error
   @Input() fieldError: boolean = false;
   @Input() textError: string = 'Text error';
 
@@ -140,6 +142,20 @@ export class AllfieldsComponent {
   actionModelStart = model();
   actionModelEnd = model();
   isFocused: boolean = false;
+
+  // error
+  @Input() formValidation: boolean = false;
+  @Input() errorField: any;
+  @Input() otherError!: boolean;
+
+  @Input() errortxtRequired!: string;
+  @Input() errortxtPattern!: string;
+  @Input() errortxtMin!: string;
+  @Input() errortxtMax!: string;
+  @Input() errortxtOther!: string;
+
+  // pattern
+  @Input() valuePattern!: string;
 
   renderer = inject(Renderer2);
 
