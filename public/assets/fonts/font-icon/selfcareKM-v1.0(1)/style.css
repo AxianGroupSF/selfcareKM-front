@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'selfcareKM';
+  src:  url('fonts/selfcareKM.eot?m2pjio');
+  src:  url('fonts/selfcareKM.eot?m2pjio#iefix') format('embedded-opentype'),
+    url('fonts/selfcareKM.ttf?m2pjio') format('truetype'),
+    url('fonts/selfcareKM.woff?m2pjio') format('woff'),
+    url('fonts/selfcareKM.svg?m2pjio#selfcareKM') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icn-"], [class*=" icn-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'selfcareKM' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icn-view-slash:before {
+  content: "\e900";
+}
+.icn-favorie:before {
+  content: "\e921";
+}
+.icn-notification:before {
+  content: "\e916";
+}
+.icn-profile:before {
+  content: "\e917";
+}
+.icn-search:before {
+  content: "\e918";
+}
+.icn-warning:before {
+  content: "\e919";
+}
+.icn-arrow-down:before {
+  content: "\e91a";
+}
+.icn-arrow-up:before {
+  content: "\e91b";
+}
+.icn-filter:before {
+  content: "\e91c";
+}
+.icn-menu:before {
+  content: "\e91d";
+}
+.icn-category:before {
+  content: "\e91e";
+}
+.icn-view:before {
+  content: "\e91f";
+}
+.icn-undo:before {
+  content: "\e920";
+}
+.icn-cards:before {
+  content: "\e924";
+}
+.icn-scan-barcode:before {
+  content: "\e923";
+}
+.icn-cube:before {
+  content: "\e906";
+}
+.icn-arrow:before {
+  content: "\e907";
+}
+.icn-home:before {
+  content: "\e908";
+}
+.icn-calendar:before {
+  content: "\e909";
+}
+.icn-check:before {
+  content: "\e90a";
+}
+.icn-notif-info:before {
+  content: "\e90b";
+}
+.icn-notif-success:before {
+  content: "\e90c";
+}
+.icn-notif-warning:before {
+  content: "\e90d";
+}
+.icn-notif-refuse:before {
+  content: "\e90e";
+}
+.icn-chevron:before {
+  content: "\e910";
+}
+.icn-chevron-double:before {
+  content: "\e90f";
+}
+.icn-edit:before {
+  content: "\e911";
+}
+.icn-arrow2:before {
+  content: "\e912";
+}
+.icn-setting:before {
+  content: "\e913";
+}
+.icn-file:before {
+  content: "\e914";
+}
+.icn-delete:before {
+  content: "\e915";
+}
+.icn-heart:before {
+  content: "\e901";
+}
