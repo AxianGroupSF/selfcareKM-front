@@ -1,72 +1,19 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { Nav } from '../../../shared/models/navigation';
+import { Component, inject } from '@angular/core';
+import { BadgesComponent } from '../../../shared/components/badges/badges.component';
+import { BreadcrumbComponent } from '../../../shared/components/breadcrumb/breadcrumb.component';
+import { BreadcrumbService } from '../../../shared/services/breadcrumb.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-header',
-    imports: [RouterLink, RouterLinkActive],
+    imports: [BadgesComponent, BreadcrumbComponent, CommonModule],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  listNav: Nav[] = [
-    {
-      link: '',
-      title: 'Accueil',
-    },
-    {
-      link: 'local',
-      title: 'i18n',
-    },
-    {
-      link: 'design-sytem',
-      title: 'Design Sytem',
-      children: [
-        {
-          link: 'design-sytem/button',
-          title: 'Button',
-        },
-        {
-          link: 'design-sytem/breadcrumb',
-          title: 'Breadcrumb',
-        },
-        {
-          link: 'design-sytem/badges',
-          title: 'Badges',
-        },
-        {
-          link: 'design-sytem/forms',
-          title: 'Forms',
-        },
-        {
-          link: 'design-sytem/notification',
-          title: 'Notification',
-        },
-        {
-          link: 'design-sytem/tabs',
-          title: 'Tabs',
-        },
-        {
-          link: 'design-sytem/paged',
-          title: 'Paged',
-        },
-        {
-          link: 'design-sytem/modal',
-          title: 'Modal',
-        },
-        {
-          link: 'design-sytem/table',
-          title: 'Table',
-        },
-      ],
-    },
-    {
-      link: 'demo',
-      title: 'Demo',
-    },
-    {
-      link: 'contacts',
-      title: 'Contacts',
-    },
-  ];
+  private breadCrumbService = inject(BreadcrumbService); 
+
+  breadcrumbs$ = this.breadCrumbService.breadcrumbs$;
+  
+  logout(){}
 }

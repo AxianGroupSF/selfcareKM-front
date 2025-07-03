@@ -2,7 +2,8 @@
   class="boxBadges"
   [class]="[
     typeBadge() ? 'boxBadges--' + typeBadge() : '',
-    aspectBadge() ? 'boxBadges--' + aspectBadge() : ''
+    aspectBadge() ? 'boxBadges--' + aspectBadge() : '',
+    withBorder() ? 'boxBadges--border' : ''
   ]"
 >
   @if (numberContent()) { @if (numberContent() > 99) { +99 } @else {

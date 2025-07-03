@@ -13,37 +13,9 @@ export const routes: Routes = [
         title: 'Accueil',
         data: {
           breadcrumb: 'Accueil',
+          icon: 'icn-home'
         },
-      },
-      {
-        path: 'local',
-        loadComponent: () =>
-          import(
-            './pages/internationalization/internationalization.component'
-          ).then((c) => c.InternationalizationComponent),
-        title: 'Local',
-        data: {
-          breadcrumb: 'i18n',
-        },
-      },
-      {
-        path: 'design-sytem',
-        loadChildren: () =>
-          import('./pages/design-system/design-system.routes').then(
-            (c) => c.routes
-          ),
-      },
-      {
-        path: 'demo',
-        title: 'Demo',
-        loadComponent: () =>
-          import('./pages/demo/demo.component').then(
-            (c) => c.DemoComponent
-          ),
-          data: {
-            breadcrumb: 'Demo',
-          },
-      },
+      }
     ],
   },
 ];

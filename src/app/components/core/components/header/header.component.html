@@ -1,53 +1,81 @@
-<header class="sectHeader sectHeader--sticky">
-  <div class="container">
-    <div class="headerIntern">
-      <div class="cntlogo">
-        <a routerLink="/">
-          <img class="img-fluid" src="assets/images/logo.svg" alt="Logo" />
-        </a>
-      </div>
-      <div class="boxNavIntern">
-        <div class="btnBox">
-          <div id="btnnav">
-            <div class="btninter">
-              <span></span>
-              <span></span>
-              <span></span>
+<header class="sectHeader">
+  <div class="boxHeader">
+    <div class="boxHeader__item">
+      <div class="sectLogo">
+        <div class="boxLogo">
+          <div class="boxLogo__img">
+            <picture class="logo">
+              <img src="/assets/images/logo.svg" alt="logo">
+            </picture>
+          </div>
+          <div class="boxLogo__txt">
+            <div class="boxTxt">
+              <div class="boxTxt__title">
+                <div class="title">Selfcare</div>
+              </div>
+              <div class="boxTxt__underTitle">
+                <div class="underTitle">Comores</div>
+              </div>
             </div>
           </div>
         </div>
-        <nav id="navigation">
-          <div class="cntNavBox">
-            <ul class="cntNav">
-              @for (nav of listNav; track $index) {
-              <li
-                routerLinkActive="current"
-                ariaCurrentWhenActive="page"
-                [routerLinkActiveOptions]="{ exact: true }"
-                [class]="{
-                  parentChild: nav.children && nav.children.length > 0
-                }"
-              >
-                <a [routerLink]="[nav.link]"> {{ nav.title }} </a>
-                @if (nav.children && nav.children.length > 0) {
-                <ul class="submenu">
-                  @for (child of nav.children; track $index) {
-                  <li
-                    routerLinkActive="current"
-                    ariaCurrentWhenActive="page"
-                    [routerLinkActiveOptions]="{ exact: true }"
-                  >
-                    <a [routerLink]="[child.link]"> {{ child.title }} </a>
-                  </li>
-                  }
-                </ul>
-                }
+      </div>
+    </div>
+    <div class="boxHeader__item">
+      <div class="boxBreadcrumb">
+        <div class="boxBreadcrumb__breadCrumb">
+          <ng-container *ngIf="breadcrumbs$ | async as breadcrumbs">
+            <app-breadcrumb
+            [listNavigation]="breadcrumbs"
+            [aspect]="'arrow2'"
+            
+          ></app-breadcrumb>
+          </ng-container>
+        </div>
+        <div class="boxBreadcrumb__icon">
+          <div class="sectIcon">
+            <ul class="contentInfo">
+              <li>
+                <div class="boxInfo">
+                  <i class="icn-search"></i>
+                </div>
               </li>
-              }
+              <li>
+                <div class="boxInfo">
+                  <span class="number">
+                    <app-badges
+                      typeBadge="number"
+                      aspectBadge="red"
+                      [numberContent]="3"
+                      [withBorder]="true"
+                    ></app-badges>
+                  </span>
+                  <i class="icn-warning"></i>
+                </div>
+              </li>
+              <li>
+                <div class="boxInfo">
+                  <span class="number">
+                    <app-badges
+                      typeBadge="number"
+                      aspectBadge="darkBlue"
+                      [numberContent]="2"
+                      [withBorder]="true"
+                    ></app-badges>
+                  </span>
+                  <i class="icn-notification"></i>
+                </div>
+              </li>
+                <li>
+                <div class="boxInfo" (click)="logout()">
+                  <i class="icn-profile"></i>
+                </div>
+                </li>
             </ul>
           </div>
-        </nav>
+        </div>
       </div>
     </div>
   </div>
 </header>
+
