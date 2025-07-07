@@ -31,9 +31,9 @@ a.btn {
     letter-spacing: common.$btn-letterSpacing;
     background: common.$btn-bg;
     border-radius: common.$btn-borderRadius;
-    color: common.$btn-color !important;
+    color: common.$btn-color;
     text-transform: common.$btn-textTransform;
-    text-decoration: none !important;
+    text-decoration: none;
     border: common.$btn-border;
     transition: common.$transition-default;
     @include lib.font-size(common.$btn-fontSize);
@@ -55,7 +55,7 @@ a.btn {
     .btnintern {
       background: common.$btn-bg-hover;
       border-color: common.$btn-bg-hover;
-      color: common.$btn-color-hover !important;
+      color: common.$btn-color-hover;
     }
     &::before {
       opacity: common.$btn-opacity-hover;
@@ -63,28 +63,28 @@ a.btn {
   }
   &--outline {
     .btnintern {
-      color: common.$btnLite-color !important;
+      color: common.$btnLite-color;
       border-color: common.$btnLite-borderColor;
-      background: common.$btnLite-bg !important;
+      background: common.$btnLite-bg;
     }
     &:hover {
       .btnintern {
-        color: common.$btnLite-hover !important;
-        background: common.$btnLite-bg-hover !important;
+        color: common.$btnLite-hover;
+        background: common.$btnLite-bg-hover;
         border-color: common.$btnLite-borderColor-hover;
       }
     }
   }
   &--outline2 {
     .btnintern {
-      color: common.$btnLite2-color !important;
-      background: common.$btnLite2-bg !important;
+      color: common.$btnLite2-color;
+      background: common.$btnLite2-bg;
       border-color: common.$btnLite2-borderColor;
     }
     &:hover {
       .btnintern {
-        color: common.$btnLite2-hover !important;
-        background: common.$btnLite2-bg-hover !important;
+        color: common.$btnLite2-hover;
+        background: common.$btnLite2-bg-hover;
         border-color: common.$btnLite2-borderColor-hover;
       }
     }
@@ -92,28 +92,28 @@ a.btn {
   &--secondary {
     .btnintern {
       background: common.$btn2-bg;
-      color: common.$btn2-color !important;
+      color: common.$btn2-color;
       border-color: common.$btn2-borderColor;
     }
     &:hover {
       .btnintern {
         background: common.$btn2-bg-hover;
-        color: common.$btn2-color-hover !important;
+        color: common.$btn2-color-hover;
         border-color: common.$btn2-borderColor-hover;
       }
     }
   }
   &--unborder {
     .btnintern {
-      color: common.$btnUnborder-color !important;
-      background: common.$btnUnborder-bg !important;
-      border-color: common.$btnUnborder-border !important;
+      color: common.$btnUnborder-color;
+      background: common.$btnUnborder-bg;
+      border-color: common.$btnUnborder-border;
     }
     &:hover {
       .btnintern {
-        color: common.$btnUnborder-hover !important;
-        background: common.$btnUnborder-bg-hover !important;
-        border-color: common.$btnUnborder-border-hover !important;
+        color: common.$btnUnborder-hover;
+        background: common.$btnUnborder-bg-hover;
+        border-color: common.$btnUnborder-border-hover;
       }
     }
   }
@@ -127,21 +127,21 @@ a.btn {
     }
     &.btn--outline {
       .btnintern {
-        background-color: common.$btnLite-disable-bg !important;
+        background-color: common.$btnLite-disable-bg;
       }
     }
     &.btn--outline2 {
       .btnintern {
-        background-color: common.$btnLite2-disable-bg !important;
+        background-color: common.$btnLite2-disable-bg;
         border-color: common.$btnLite2-disable-borderColor;
-        color: common.$btnLite2-disable-color !important;
+        color: common.$btnLite2-disable-color;
       }
     }
     &.btn--unborder {
       .btnintern {
-        color: common.$btnUnborder-disable-color !important;
-        background-color: common.$btnUnborder-disable-bg !important;
-        border-color: common.$btnUnborder-disable-bg !important;
+        color: common.$btnUnborder-disable-color;
+        background-color: common.$btnUnborder-disable-bg;
+        border-color: common.$btnUnborder-disable-bg;
       }
       &::before {
         content: none;
@@ -149,14 +149,17 @@ a.btn {
     }
     &.btn--secondary {
       .btnintern {
-        border-color: common.$btn2-disable-borderColor !important;
-        background: common.$btn2-disable-bg !important;
+        border-color: common.$btn2-disable-borderColor;
+        background: common.$btn2-disable-bg;
       }
     }
   }
   &--fullWidth {
     width: 100%;
     max-width: 100%;
+    .btnintern {
+      width: 100%;
+    }
   }
   i {
     display: inline-block;

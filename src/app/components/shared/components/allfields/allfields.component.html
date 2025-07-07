@@ -115,7 +115,7 @@
     <i class="{{ icon }}"></i>
     }
   </div>
-  } @case ("passwordInput") {
+  } @case ("password") {
   <div
     class="textField textField--input"
     [ngClass]="[
@@ -129,7 +129,7 @@
     ]"
   >
     <input
-      type="password"
+      [type]="typeState"
       [formControlName]="nameField"
       [id]="nameField"
       (focus)="onFocus($event)"
@@ -140,7 +140,7 @@
     @if (textLable) {
     <label [for]="nameField">{{ textLable }}</label>
     } @if (icon) {
-    <i class="{{ icon }}"></i>
+    <i class="{{ icon }}" (click)="onIconClick()"></i>
     }
   </div>
   } @case ("radio") {
@@ -339,7 +339,7 @@
   <i class="{{ icon }}"></i>
   }
 </div>
-} @case ("passwordInput") {
+} @case ("password") {
 <div
   class="textField textField--input"
   [ngClass]="[

@@ -11,6 +11,7 @@ export class AuthService {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly authorization = 'authorization';
   private readonly http = inject(HttpRequestService);
+
   getAuth(): string {
     if (isPlatformBrowser(this.platformId)) {
       return localStorage.getItem(this.authorization) ?? '';
@@ -20,6 +21,7 @@ export class AuthService {
   setAuth(token: string) {
     localStorage.setItem(this.authorization, token);
   }
+
   isAuthenticated(): boolean {
     return this.getAuth() !== null;
   }

@@ -15,6 +15,16 @@ export const routes: Routes = [
           breadcrumb: 'Accueil',
           icon: 'icn-home'
         },
+      },
+      {
+        path: 'auth',
+        loadComponent: () =>
+          import('./../../core/auth/auth.component').then((c) => c.AuthComponent),
+        title: 'Accueil',
+        data: {
+          breadcrumb: 'Authentification',
+          icon: 'icn-profile'
+        },
       }
     ],
   },

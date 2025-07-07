@@ -6,6 +6,7 @@ import {
   inject,
   Input,
   model,
+  output,
   Output,
   Renderer2,
 } from '@angular/core';
@@ -84,7 +85,7 @@ export class AllfieldsComponent {
     | 'switchButton'
     | 'checkbox'
     | 'textInput'
-    | 'passwordInput'
+    | 'password'
     | 'radio'
     | 'textarea'
     | 'select'
@@ -158,6 +159,17 @@ export class AllfieldsComponent {
   @Input() valuePattern!: string;
 
   renderer = inject(Renderer2);
+
+  stateClickIcon = output<boolean>();
+  stateIcon = false;
+  typeState: string = 'password'; // Pour le champ mot de passe
+  onIconClick(): void {
+    // Accès direct à l’élément
+    this.stateIcon = !this.stateIcon;
+    this.typeState = (this.stateIcon)?'text':'password'; 
+    this.stateClickIcon.emit(this.stateIcon);
+  }
+
 
   checkForm(event: any) {
     this.actionField.emit(event);
