@@ -10,13 +10,12 @@
     }
 
     &__txt{
-        position: relative;
-        .boxTxt{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            translate: -50% -50%;
-        }
+        // overflow-y: auto;
+        // display: flex;
+        // flex-direction: column;
+
+        overflow-y: auto;
+        padding: 32px;
     }
 }
 .boxImg{
@@ -32,80 +31,93 @@
 }
 
 .boxTxt{
-    &__header{
-        .boxHeader{
-            .title{
-                text-align: center;
-                text-transform: capitalize;
-                font-size: 40px;
-                margin-bottom: 20px;
-            }
-        }
+    @media (min-height : 600px) {
+    height: 100%;        
     }
-    &__content{
-        margin-bottom: 22px;
-        padding-bottom: 153px;
-        .boxContent{
-            width: 450px;
-            margin: 0 auto;
-            box-sizing: border-box;
-            &__info{
-                .boxInfo{
-                    text-align: center;
-                    color: $color-primary3;
-                    font-size: 16px;
-                    font-weight: 600;
-                    line-height: 1;
-                    margin-bottom: 20px;
-                }
-            }
-            &__form{
-                .boxForm{
-                    margin-bottom: 20px;
-                    .btnSubmit{
+    &__form{
+        height: calc(100% - 47px);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        .boxForm{
+            margin-top: auto;
+            margin-bottom: auto;
+            &__header{
+                .boxHeader{
+                    .title{
                         text-align: center;
-                        padding: 16px 0;
-                        width: 100%;
-                        border-radius: 8px;
-                        color: $color-primary2;
-                        background-color: $color-primary1;
-                        border: none;
-                        font-size: 16px;
-                        font-weight: 600;
-                        text-transform: uppercase;
-                        margin-bottom: 20px;
-                    }
-                    .formGroup{
+                        text-transform: capitalize;
+                        font-size: 40px;
                         margin-bottom: 20px;
                     }
                 }
             }
-            &__links{
-                a{
-                    display: block;
-                    font-size: 16px;
-                    font-weight: 600;
-                }
-                .links{
-                    text-align: center;
-                    .link-top{
-                        color: $color-primary4;
-                        margin-bottom: 15px;
+            &__content{
+                margin-bottom: 22px;
+                .boxContent{
+                    width: 450px;
+                    margin: 0 auto;
+                    box-sizing: border-box;
+                    &__info{
+                        .boxInfo{
+                            text-align: center;
+                            color: $color-primary3;
+                            font-size: 16px;
+                            font-weight: 600;
+                            line-height: 1;
+                            margin-bottom: 20px;
+                        }
                     }
-                    .link-bottom{
-                        color: $color-primary2;
-                        padding: 16px 0;
-                        border: 1px solid $color-primary1;
-                        border-radius: 8px;
+                    &__form{
+                        .boxForm{
+                            margin-bottom: 20px;
+                            .btnSubmit{
+                                text-align: center;
+                                padding: 16px 0;
+                                width: 100%;
+                                border-radius: 8px;
+                                color: $color-primary2;
+                                background-color: $color-primary1;
+                                border: none;
+                                font-size: 16px;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                margin-bottom: 20px;
+                            }
+                            .formGroup{
+                                margin-bottom: 20px;
+                            }
+                        }
                     }
-                    .sectSeparated{
-                        margin-bottom: 20px;
-                        font-size: 12px; 
+                    &__links{
+                        a{
+                            display: block;
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+                        .links{
+                            text-align: center;
+                            .link-top{
+                                color: $color-primary4;
+                                margin-bottom: 15px;
+                            }
+                            .link-bottom{
+                                color: $color-primary2;
+                                padding: 16px 0;
+                                border: 1px solid $color-primary1;
+                                border-radius: 8px;
+                            }
+                            .sectSeparated{
+                                margin-bottom: 20px;
+                                font-size: 12px; 
+                            }
+                        }
                     }
                 }
             }
         }
     }
+    
     &__footer{
         width: 100%;
         display: flex;

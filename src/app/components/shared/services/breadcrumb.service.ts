@@ -33,6 +33,9 @@ export class BreadcrumbService {
     if (route) {
       const routeUrl = parentUrl.concat(route.url.map((url) => url.path));
 
+      console.log("service", routeUrl);
+      
+
       if (route.data['breadcrumb']) {
         const breadcrumb = {
           label: this.getLabel(route.data),

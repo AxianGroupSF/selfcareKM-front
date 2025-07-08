@@ -12,17 +12,12 @@ import { AuthService } from '../../services/auth.service';
     styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  private breadCrumbService = inject(BreadcrumbService); 
-  private authService = inject(AuthService);
+  private readonly breadCrumbService = inject(BreadcrumbService); 
+  private readonly authService = inject(AuthService);
 
   breadcrumbs$ = this.breadCrumbService.breadcrumbs$;
   
-  // logout(){
-  //   this.authService.logout();
-  // }
-
   logout(): void {
     this.authService.logout();
-    console.log('User logged out');
   }
 }

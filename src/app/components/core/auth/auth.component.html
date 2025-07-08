@@ -7,74 +7,81 @@
     </div>
     <div class="sectAuth__txt">
         <div class="boxTxt">
-            <div class="boxTxt__header">
-                <div class="boxHeader">
-                    <h1 class="title">Bienvenue</h1>
-                </div>
-            </div>
-
-            <div class="boxTxt__content">
-                <div class="boxContent">
-                    <div class="boxContent__info">
-                        <div class="boxInfo">Merci d’entrer votre nom d’utilisateur et votre mot de passe pour vous connecter</div>
-                    </div>
-                    <div class="boxContent__form">
-                        <div class="boxForm" >
-                            <div class="formGroup">
-                                <app-allfields
-                                    typeField="textInput"
-                                    [parentForm]="formDefault"
-                                    nameField="login"
-                                    textLable="Identifiant"
-                                    formControlName="login"
-                                    [fullWidth]="true"
-                                    (actionField)="dateform($event)"
-                                    [fieldError]="
-                                        testError(formDefault.get('login'), [
-                                        'required',
-                                        'pattern'
-                                        ])
-                                    "
-                                    errortxtRequired="Champ obligatoire"
-                                    errortxtPattern="Adresse mail incorrect"
-                                    [formValidation]="formValidation"
-                                ></app-allfields>
-                            </div>
-                            <div class="formGroup">
-                                <app-allfields
-                                    [typeField]="'password'"
-                                    [parentForm]="formDefault"
-                                    nameField="password"
-                                    textLable="Password"
-                                    formControlName="password"
-                                    [icon]="showPassword ? 'icn-view-slash' : 'icn-view'"
-                                    [fullWidth]="true"                                    
-                                    (stateClickIcon)="stateIcon($event)"
-                                    (actionField)="dateform($event)"
-                                    [fieldError]="
-                                        testError(formDefault.get('password'), [
-                                        'required'
-                                        ])
-                                    "
-                                    errortxtRequired="Champ obligatoire"
-                                    [formValidation]="formValidation"
-                                ></app-allfields>
-                            </div>
-                            <span class="errorMessage">{{errorMessage ? errorMessage : ''}}</span>
-                            <app-default-button [fullWidth]="true" (action)="login()" class="btnConnexion">Se connecter</app-default-button>
-                            
+            <div class="boxTxt__form">
+                <div class="boxForm">
+                    <div class="boxForm__header">
+                        <div class="boxHeader">
+                            <h1 class="title">Bienvenue</h1>
                         </div>
                     </div>
-                    <div class="boxContent__links">
-                        <div class="links">
-                            <div class="separator"><span>ou</span></div>
-                            <a href="#" class="link-top">Pas encore d'identifiant?</a>
-                            <app-default-button [fullWidth]="true" class="link-bottom" aspect="unborder">Demander un identifiant</app-default-button>
+
+                    <div class="boxForm__content">
+                        <div class="boxContent">
+                            <div class="boxContent__info">
+                                <div class="boxInfo">Merci d’entrer votre nom d’utilisateur et votre mot de passe pour vous connecter</div>
+                            </div>
+                            <div class="boxContent__form">
+                                <div class="boxForm" >
+                                    <div class="formGroup">
+                                        <app-allfields
+                                            typeField="textInput"
+                                            [parentForm]="formDefault"
+                                            nameField="login"
+                                            textLable="Identifiant"
+                                            formControlName="login"
+                                            [fullWidth]="true"
+                                            (actionField)="dateform($event)"
+                                            [fieldError]="
+                                                testError(formDefault.get('login'), [
+                                                'required',
+                                                'pattern'
+                                                ])
+                                            "
+                                            errortxtRequired="Champ obligatoire"
+                                            errortxtPattern="Adresse mail incorrect"
+                                            [formValidation]="formValidation"
+                                        ></app-allfields>
+                                    </div>
+                                    <div class="formGroup">
+                                        <app-allfields
+                                            [typeField]="'password'"
+                                            [parentForm]="formDefault"
+                                            nameField="password"
+                                            textLable="Password"
+                                            formControlName="password"
+                                            [icon]="showPassword ? 'icn-view-slash' : 'icn-view'"
+                                            [fullWidth]="true"                                    
+                                            (stateClickIcon)="stateIcon($event)"
+                                            (actionField)="dateform($event)"
+                                            [fieldError]="
+                                                testError(formDefault.get('password'), [
+                                                'required'
+                                                ])
+                                            "
+                                            errortxtRequired="Champ obligatoire"
+                                            [formValidation]="formValidation"
+                                        ></app-allfields>
+                                    </div>
+                                    <span class="errorMessage">{{errorMessage ? errorMessage : ''}}</span>
+                                    <app-default-button [fullWidth]="true" (action)="login()" class="btnConnexion">Se connecter</app-default-button>
+                                    
+                                </div>
+                            </div>
+                            <div class="boxContent__links">
+                                <div class="links">
+                                    <div class="separator"><span>ou</span></div>
+                                    <a href="#" class="link-top">Pas encore d'identifiant?</a>
+                                    <app-default-button [fullWidth]="true" class="link-bottom" aspect="unborder">Demander un identifiant</app-default-button>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- <div class="boxTxt__footer">
+                        
+                    </div> -->
                 </div>
             </div>
-
             <div class="boxTxt__footer">
                 <div class="boxFooter">
                     <div class="boxFooter__logo">
@@ -94,7 +101,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
