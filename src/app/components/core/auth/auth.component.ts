@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AllfieldsComponent } from '../../shared/components/allfields/allfields.component';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ErrorType } from '../../shared/models/allfields';
 import { DefaultButtonComponent } from '../../shared/components/default-button/default-button.component';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-auth',
@@ -25,6 +27,9 @@ export class AuthComponent {
   errorMessage = '';
 
   formValidation = false;
+
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
@@ -54,5 +59,29 @@ export class AuthComponent {
 
   login(){
     this.checkForm();
+    const { login, password } = this.formDefault.value;
+
+    this.authService.login({login, password}).subscribe({
+      next: (res) => {
+        this.authService.setAuth(res.token);        
+
+        const role = this.authService.getUserRole();
+
+        switch (role) {
+          case 'ROLE_ADMIN':
+            this.router.navigate(['/app/admin']);
+            break;
+          case 'ROLE_IT_MANAGER':
+            this.router.navigate(['/app/it-manager']);
+            break;
+          case 'ROLE_BACK_OFFICE':
+            this.router.navigate(['/app/back-office']);
+            break;
+          default:
+            this.router.navigate(['/unauthorized']);
+        }
+      },
+      error: () => alert('Identifiants invalides')
+    });
   }
 }

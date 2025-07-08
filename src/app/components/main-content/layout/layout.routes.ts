@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from '../../core/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -8,6 +9,11 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+      },
+      {
+        path: 'home',
         loadComponent: () =>
           import('./pages/home/home.component').then((c) => c.HomeComponent),
         title: 'Accueil',
@@ -17,14 +23,40 @@ export const routes: Routes = [
         },
       },
       {
-        path: 'auth',
+        path: 'admin',
         loadComponent: () =>
-          import('./../../core/auth/auth.component').then((c) => c.AuthComponent),
-        title: 'Accueil',
+          import('./pages/admin/admin.component').then((c) => c.AdminComponent),
+        title: 'Admin',
         data: {
-          breadcrumb: 'Authentification',
-          icon: 'icn-profile'
+          breadcrumb: 'Admin',
+          icon: 'icn-profile',
+          expectedRole: 'ROLE_ADMIN' 
         },
+        canActivate: [authGuard]
+      },
+      {
+        path: 'it-manager',
+        loadComponent: () =>
+          import('./pages/it-manager/it-manager.component').then((c) => c.ItManagerComponent),
+        title: 'IT-Manager',
+        data: {
+          breadcrumb: 'IT-Manager',
+          icon: 'icn-profile',
+          expectedRole: 'ROLE_IT_MANAGER' 
+        },
+        canActivate: [authGuard]
+      },
+      {
+        path: 'back-office',
+        loadComponent: () =>
+          import('./pages/back-office/back-office.component').then((c) => c.BackOfficeComponent),
+        title: 'Back-office',
+        data: {
+          breadcrumb: 'Back-office',
+          icon: 'icn-profile',
+          expectedRole: 'ROLE_BACK_OFFICE' 
+        },
+        canActivate: [authGuard]
       }
     ],
   },
