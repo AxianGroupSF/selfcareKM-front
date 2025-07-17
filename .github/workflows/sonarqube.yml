@@ -34,6 +34,6 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
           args: >
-            -Dsonar.projectKey="SelfcareKM-back"
+            -Dsonar.projectKey="SelfcareKM-front"
             -Dsonar.sources=src
             -Dsonar.projectVersion=${{ github.sha }}
